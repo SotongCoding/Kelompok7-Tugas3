@@ -10,7 +10,7 @@
  - Ada Shield (Melindungi Pemain)
  
  
- [Data Game]
+[Data Game]
  - Nyawa untuk Player
  - Score + High Score
 
