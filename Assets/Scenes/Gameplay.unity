@@ -619,6 +619,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2886816349858502436, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
   m_PrefabInstance: {fileID: 734710761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &832441203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5115287416303585787, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
+  m_PrefabInstance: {fileID: 734710761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &832441204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832441203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6df362aa5661544a42ee0ade7d37f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Muzzle: {fileID: 734710762}
+  bulletPrefabs: {fileID: 4314441991938166077, guid: 6536477a9cfd7e44196bfc8582ffc6cd, type: 3}
 --- !u!1001 &862188800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,6 +836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd9837b39d047c41876d6cc87e8eb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Muzzle: {fileID: 0}
+  bulletPrefabs: {fileID: 0}
 --- !u!1001 &940936229
 PrefabInstance:
   m_ObjectHideFlags: 0

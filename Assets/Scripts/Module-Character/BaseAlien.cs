@@ -4,12 +4,15 @@ using UnityEngine;
 
 namespace SpaceInvader.Character
 {
-    public abstract class BaseAlien : BaseObject
+    public class BaseAlien : BaseObject
 {
+		[SerializeField] protected Transform Muzzle;
+		[SerializeField] protected GameObject bulletPrefabs;
         bool changeDirection;
-        public override void Attack()
+
+		public override void Attack()
         {
-            
+			Instantiate (bulletPrefabs, Muzzle.position, Muzzle.rotation);
         }
 
         public override void Move()
@@ -37,7 +40,7 @@ namespace SpaceInvader.Character
         // Update is called once per frame
         void Update()
         {
-
+			Attack();
         }
     }
 }

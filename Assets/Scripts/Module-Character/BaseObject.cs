@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using SpaceInvader.Gameplay.PlayerStatus;
+//using Agate.MVC.Base;
 
 namespace SpaceInvader.Character
 {
@@ -9,6 +11,8 @@ namespace SpaceInvader.Character
         protected int speed = 10;
         protected int damage;
         protected int attackDamage;
+//		protected PlayerStatus_Model lifeStatus;
+
         public abstract void Attack();
 
         public abstract void Move();
@@ -20,8 +24,12 @@ namespace SpaceInvader.Character
 
         public virtual void TakeDamage()
         {
-            throw new System.NotImplementedException();
+//			lifeStatus.ReduceHealth();
         }
+//		public void SetDepedency(PlayerStatus_Model lifeCounter)
+//		{
+//			lifeStatus = lifeCounter;
+//		}
 
         // Update is called once per frame
         void Update()
