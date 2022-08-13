@@ -1,4 +1,4 @@
-[Character]
+1. [Character] - Lesman
   -BaseObject
   --Character (Player)
   --BaseAlien
@@ -20,23 +20,26 @@
   void Attack
   ===============
   
-  [Score]
+2. [Score] -Sugeng
   void AddScore
   void SaveScore
   
-  [LeaderBoard] - Sugeng
-  void RegisterScore(nama, score)
-  void LoadScoreBoard
-  
-  [PowerUp]
+3. [PowerUp]- Sugeng
   <IPickAble>
   void OnPick
   
-  [Bullet]
+4. [Bullet] -Sugeng
   void OnCollide
   
-  [Audio]
+5. [Audio] -Lesman
   voidOnPlay
+  
+6. [Spawner] -Sugeng
+  void SpawnAlien
+  
+7. [LeaderBoard] - Sugeng
+  void RegisterScore(nama, score)
+  void LoadScoreBoard
   
   
   
