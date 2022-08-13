@@ -1,0 +1,42 @@
+[Character]
+  -BaseObject
+  --Character (Player)
+  --BaseAlien
+  ---AlienNormal
+  ---AlienUFO
+  
+  -Shiled
+  
+  <IDamageable>
+  void TakeDamage
+  void OnDestroy
+  -----
+  [MoveLogic]
+  <IMoveAble>
+  void Move();
+  ----
+  [Attack Logic]
+  <IAttackAble>
+  void Attack
+  ===============
+  
+  [Score]
+  void AddScore
+  void SaveScore
+  
+  [LeaderBoard] - Sugeng
+  void RegisterScore(nama, score)
+  void LoadScoreBoard
+  
+  [PowerUp]
+  <IPickAble>
+  void OnPick
+  
+  [Bullet]
+  void OnCollide
+  
+  [Audio]
+  voidOnPlay
+  
+  
+  
