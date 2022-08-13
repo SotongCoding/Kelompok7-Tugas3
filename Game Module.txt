@@ -20,9 +20,12 @@
   void Attack
   ===============
   
-2. [Score] -Sugeng
+2. [PlayerStatus Data] -Sugeng
   void AddScore
   void SaveScore
+  
+  void ReduceHealth
+
   
 3. [PowerUp]- Sugeng
   <IPickAble>
