@@ -1,0 +1,48 @@
+[Main Feature]
+ - Character Bergerak (Kanan-Kiri)
+ - Character menembak
+ - Character Mati / Hancur
+ 
+ - Enemy Bergerak (Kanan-Kiri + Interval Turun)
+ - Enemy menembak
+ - Enemy Mati / Hancur
+
+ - Ada Shield (Melindungi Pemain)
+ 
+ 
+ [Data Game]
+ - Nyawa untuk Player
+ - Score + High Score
+
+[Additional Feature]
+ - Leader Board
+ - Power Up (Player) 
+
+
+[On Detail]
+<Pemain>
+- Pemain bergrak kanan kiri dengan ada batasan di kanan dan kiri
+- Nyawa pemain berkurang ketika terkena serangan enemy
+
+<Musuh>
+- Musuh bergrak kanan kiri dengan ada batasan di kanan dan kiri
+- Musuh turun setelah beberapa detik waktu berlalu
+- Nyawa pemain berkurang ketika terkena serangan enemy
+- Semakin dikit Musuh di arena maka semakin cepat gerak kanan kiri
+- Default banyak msuuh 50
+
+- Variasi Musuh 
+1. Musuh Biasa : Yang muncul banyak ditengah layar
+2. UFO : Muncul diatas sendiri, setelah interval bunuh 7 musuh, dapat skore banyak ketika dibunuh
+
+<Shield>
+- Punya nyawa yang berkurang ketika terkena tembakan musuh + tembakan player
+- Shield diperbaharui ketika ganti wave
+- Default Nyawa 5
+
+<Power Up>
+- Power up muncul tergantung rate, pas musuh hancur
+- Power Up berjalan turun, setelah muncul, titik muncul di enemy yang mati
+- Variasi : 
+1. Piercing : Baru hancur ketika menabrak 2 musuh. Durasi 10 detik.
+
