@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 using Agate.MVC.Base;
 using Agate.MVC.Core;
 
-namespace ExampleGame.Boot
+namespace SpaceInvader.Boot
 {
     public class GameMain : BaseMain<GameMain>, IMain
     {
