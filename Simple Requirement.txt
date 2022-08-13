@@ -12,7 +12,8 @@
  
 [Data Game]
  - Nyawa untuk Player
- - Score + High Score
+ - Score (Individu Player)
+ - Score Board (Data semua individu player) 
 
 [Additional Feature]
  - Leader Board

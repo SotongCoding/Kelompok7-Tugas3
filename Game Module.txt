@@ -1,0 +1,45 @@
+1. [Character] - Lesman
+  -BaseObject
+  --Character (Player)
+  --BaseAlien
+  ---AlienNormal
+  ---AlienUFO
+  
+  -Shiled
+  
+  <IDamageable>
+  void TakeDamage
+  void OnDestroy
+  -----
+  [MoveLogic]
+  <IMoveAble>
+  void Move();
+  ----
+  [Attack Logic]
+  <IAttackAble>
+  void Attack
+  ===============
+  
+2. [Score] -Sugeng
+  void AddScore
+  void SaveScore
+  
+3. [PowerUp]- Sugeng
+  <IPickAble>
+  void OnPick
+  
+4. [Bullet] -Sugeng
+  void OnCollide
+  
+5. [Audio] -Lesman
+  voidOnPlay
+  
+6. [Spawner] -Sugeng
+  void SpawnAlien
+  
+7. [LeaderBoard] - Sugeng
+  void RegisterScore(nama, score)
+  void LoadScoreBoard
+  
+  
+  
