@@ -9,6 +9,7 @@ namespace SpaceInvader.Gameplay.PlayerStatus
 {
     public class PlayerStatus_Controller : ObjectController<PlayerStatus_Controller, PlayerStatus_Model, IPlayerStatus_Model, PlayerStatus_View>
     {
+
         public void ScoreKilledEnemy(int value)
         {
             _model.AddScore(value);
@@ -18,6 +19,12 @@ namespace SpaceInvader.Gameplay.PlayerStatus
         {
             _model.ReduceHealth();
             Publish<UpdateHealthMessege>(new UpdateHealthMessege(_model.playerHealth));
+
+            if (_model.playerHealth <= 0)
+            {
+                Debug.Log("playerDie");
+                Publish<CharacterDieMessege>(new CharacterDieMessege(_model.playerName, _model.currentScore));
+            }
         }
     }
 }

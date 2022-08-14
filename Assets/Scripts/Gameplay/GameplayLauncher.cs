@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using Agate.MVC.Base;
 using Agate.MVC.Core;
 
 using SpaceInvader.Boot;
 using SpaceInvader.Gameplay.PlayerStatus;
+using SpaceInvader.ScoreBoard;
 
 namespace SpaceInvader.Gameplay
 {
@@ -28,7 +30,7 @@ namespace SpaceInvader.Gameplay
             return new IController[]
             {
                 new PlayerStatus_Controller(),
-                // new SoundfxController(),
+                new ScoreBoard_Controller(),
             };
         }
 

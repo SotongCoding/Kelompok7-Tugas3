@@ -25,4 +25,16 @@ namespace SpaceInvader.Messege
             this.currentScore = currentScore;
         }
     }
+    public struct CharacterDieMessege
+    {
+        public CharacterDieMessege(string playerName, int lastScore)
+        {
+            this.playerName = playerName;
+            this.lastScore = lastScore;
+        }
+
+        public string playerName { private set; get; }
+        public int lastScore { private set; get; }
+
+    }
 }
