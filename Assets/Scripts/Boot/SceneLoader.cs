@@ -4,7 +4,7 @@ using UnityEngine;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
 
-namespace ExampleGame.Boot
+namespace SpaceInvader.Boot
 {
     public class SceneLoader : BaseLoader<SceneLoader>
     {

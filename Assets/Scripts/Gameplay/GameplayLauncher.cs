@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using ExampleGame.Boot;
 
+using SpaceInvader.Boot;
+using SpaceInvader.Gameplay.PlayerStatus;
+using SpaceInvader.ScoreBoard;
 
-namespace ExampleGame.Gameplay
+namespace SpaceInvader.Gameplay
 {
     public class GameplayLauncher : SceneLauncher<GameplayLauncher, GameplayView>
     {
         public override string SceneName => "Gameplay";
 
-        //private ClickGameController _clickGame;
+        private PlayerStatus_Controller _playerStatusControl;
+        private ScoreBoard_Controller _scoreBoardControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -26,14 +30,14 @@ namespace ExampleGame.Gameplay
         {
             return new IController[]
             {
-                // new ClickGameController(),
-                // new SoundfxController(),
+                new PlayerStatus_Controller()
             };
         }
 
         protected override IEnumerator InitSceneObject()
         {
-            //_clickGame.SetView(_view.ClickGameView);
+            _playerStatusControl.SetView(_view.statusView);
+            _scoreBoardControl.SetView(_view.scoreBoardView);
             yield return null;
         }
 

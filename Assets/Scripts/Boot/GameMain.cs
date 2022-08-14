@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 using Agate.MVC.Base;
 using Agate.MVC.Core;
 
-namespace ExampleGame.Boot
+namespace SpaceInvader.Boot
 {
     public class GameMain : BaseMain<GameMain>, IMain
     {
@@ -16,7 +17,9 @@ namespace ExampleGame.Boot
 
         protected override IController[] GetDependencies()
         {
-            return null; //new IController[] { new SaveDataController() };
+            return new IController[] { 
+                new ScoreBoard.ScoreBoard_Controller() 
+            };
         }
 
         protected override IEnumerator StartInit()
