@@ -12,7 +12,7 @@ namespace SpaceInvader.ScoreBoard
     {
         int scoreBoardLimit = 10;
 
-        public List<SocoreBoardData> datas { private set; get; }
+        public List<SocoreBoardData> datas { private set; get; } = new List<SocoreBoardData>();
 
         public void StoreScore(SocoreBoardData newData)
         {
