@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SpaceInvader.Pooling;
 
 namespace SpaceInvader.Character
 {
     public class BaseAlien : BaseObject
-{
-		[SerializeField] protected Transform Muzzle;
-		[SerializeField] protected GameObject bulletPrefabs;
-        bool changeDirection;
+    {
+        [SerializeField] private List<GameObject> Enemyship;
+        private ObjectPooling bulletPool;
+        protected bool changeDirection;
+        [SerializeField] protected GameObject bulletPrefabs;
 
-		public override void Attack()
+        public override void Attack()
         {
             StartCoroutine(SpawnBulletEnemy());
         }
@@ -34,15 +36,23 @@ namespace SpaceInvader.Character
                 changeDirection = false;
             }
         }
-
         IEnumerator SpawnBulletEnemy()
         {
-            Instantiate(bulletPrefabs, Muzzle.position, Muzzle.rotation);
-            yield return new WaitForSeconds(7f);
+            while (true)
+            {
+                var alienShip = Enemyship[Random.Range(0, Enemyship.Count)]; 
+                Instantiate(bulletPrefabs, alienShip.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(2f);
+            }
+        }
+        private void Start()
+        {
+            Attack();
         }
 
+
+
         // Update is called once per frame
-        
     }
 }
 

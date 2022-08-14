@@ -6,7 +6,7 @@ using Agate.MVC.Base;
 
 namespace SpaceInvader.Character
 {
-    public abstract class BaseObject : MonoBehaviour, IMoveable, IAttackable, IDamageable
+    public abstract class BaseObject : MonoBehaviour, IMoveable, IAttackable
     {
         protected int speed = 10;
         protected int damage;
@@ -17,23 +17,11 @@ namespace SpaceInvader.Character
 
         public abstract void Move();
 
-        public virtual void ObjectDestroy()
-        {
-            Destroy(this.gameObject);
-        }
-
-        public virtual void TakeDamage()
-        {
-            
-        }
-
 
         // Update is called once per frame
         void Update()
         {
             Move();
-            TakeDamage();
-            Attack();
         }
     }
 }
