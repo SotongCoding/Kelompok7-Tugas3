@@ -17,7 +17,9 @@ namespace SpaceInvader.Boot
 
         protected override IController[] GetDependencies()
         {
-            return null; //new IController[] { new SaveDataController() };
+            return new IController[] { 
+                new ScoreBoard.ScoreBoard_Controller() 
+            };
         }
 
         protected override IEnumerator StartInit()

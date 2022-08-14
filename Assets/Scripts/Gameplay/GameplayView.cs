@@ -5,11 +5,13 @@ using UnityEngine;
 using Agate.MVC.Base;
 
 using SpaceInvader.Gameplay.PlayerStatus;
+using SpaceInvader.ScoreBoard;
 
 namespace SpaceInvader.Gameplay
 {
     public class GameplayView : BaseSceneView
     {
-        [SerializeField] public PlayerStatus_View statusView;
+        public PlayerStatus_View statusView;
+        public ScoreBoard_View scoreBoardView;
     }
 }

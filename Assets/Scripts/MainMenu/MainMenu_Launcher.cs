@@ -10,6 +10,7 @@ namespace SpaceInvader.MainMenu
 {
     public class MainMenu_Launcher : SceneLauncher<MainMenu_Launcher, MainMenu_View>
     {
+        private ScoreBoard.ScoreBoard_Controller _scoreBoard;
         public override string SceneName => "MainMenu";
 
         protected override IConnector[] GetSceneConnectors()
@@ -24,6 +25,7 @@ namespace SpaceInvader.MainMenu
 
         protected override IEnumerator InitSceneObject()
         {
+            _scoreBoard.SetView(_view.scoreBoardView);
             yield return null;
         }
 
@@ -31,5 +33,6 @@ namespace SpaceInvader.MainMenu
         {
             yield return null;
         }
+
     }
 }

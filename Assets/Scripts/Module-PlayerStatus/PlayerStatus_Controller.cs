@@ -9,7 +9,6 @@ namespace SpaceInvader.Gameplay.PlayerStatus
 {
     public class PlayerStatus_Controller : ObjectController<PlayerStatus_Controller, PlayerStatus_Model, IPlayerStatus_Model, PlayerStatus_View>
     {
-
         public void ScoreKilledEnemy(int value)
         {
             _model.AddScore(value);

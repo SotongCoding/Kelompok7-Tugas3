@@ -21,5 +21,10 @@ namespace SpaceInvader.ScoreBoard
             base.SetView(view);
             view.SetButtonCallback();
         }
+        public override IEnumerator Initialize()
+        {
+            _model.LoadData();
+            return base.Initialize();
+        }
     }
 }

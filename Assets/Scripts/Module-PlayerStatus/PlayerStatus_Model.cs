@@ -10,6 +10,7 @@ namespace SpaceInvader.Gameplay.PlayerStatus
     {
         public int currentScore { private set; get; }
         public int playerHealth { private set; get; }
+        
         public string playerName { private set; get; }
 
         public void AddScore(int value)

@@ -15,7 +15,8 @@ namespace SpaceInvader.Gameplay
     {
         public override string SceneName => "Gameplay";
 
-        private PlayerStatus_Controller _scoreControl;
+        private PlayerStatus_Controller _playerStatusControl;
+        private ScoreBoard_Controller _scoreBoardControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -29,14 +30,14 @@ namespace SpaceInvader.Gameplay
         {
             return new IController[]
             {
-                new PlayerStatus_Controller(),
-                new ScoreBoard_Controller(),
+                new PlayerStatus_Controller()
             };
         }
 
         protected override IEnumerator InitSceneObject()
         {
-            _scoreControl.SetView(_view.statusView);
+            _playerStatusControl.SetView(_view.statusView);
+            _scoreBoardControl.SetView(_view.scoreBoardView);
             yield return null;
         }
 

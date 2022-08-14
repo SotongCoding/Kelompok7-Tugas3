@@ -40,7 +40,7 @@ namespace SpaceInvader.Gameplay
         {
             Unsubscribe<UpdateHealthMessege>(OnUpdateHealth);
             Unsubscribe<UpdateScoreMessege>(OnUpdateScore);
-            Subscribe<CharacterDieMessege>(OnCharacterDieMessege);
+            Unsubscribe<CharacterDieMessege>(OnCharacterDieMessege);
         }
     }
 }
