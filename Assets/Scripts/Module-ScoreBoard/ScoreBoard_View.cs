@@ -48,17 +48,6 @@ namespace SpaceInvader.ScoreBoard
             showLeaderBoard.onClick.AddListener(ShowScoreBoard);
             Debug.Log("Set Callback");
         }
-
-        private void Update()
-        {
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _model.datas.Add(new SocoreBoardData("Data", 10));
-                RefreshScoreBoard();
-            }
-
-        }
         protected override void InitRenderModel(IScoreBoard_Model model)
         {
             RefreshScoreBoard();
