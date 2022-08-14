@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using SpaceInvader.Gameplay.PlayerStatus;
-//using Agate.MVC.Base;
+using Agate.MVC.Base;
 
 namespace SpaceInvader.Character
 {
@@ -24,19 +24,16 @@ namespace SpaceInvader.Character
 
         public virtual void TakeDamage()
         {
-//			lifeStatus.ReduceHealth();
+            
         }
-//		public void SetDepedency(PlayerStatus_Model lifeCounter)
-//		{
-//			lifeStatus = lifeCounter;
-//		}
+
 
         // Update is called once per frame
         void Update()
         {
             Move();
             TakeDamage();
-
+            Attack();
         }
     }
 }

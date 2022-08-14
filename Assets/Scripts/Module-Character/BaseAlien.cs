@@ -12,36 +12,37 @@ namespace SpaceInvader.Character
 
 		public override void Attack()
         {
-			Instantiate (bulletPrefabs, Muzzle.position, Muzzle.rotation);
+            StartCoroutine(SpawnBulletEnemy());
         }
 
         public override void Move()
         {
             if (changeDirection)
             {
-                transform.Translate(Vector2.right * speed * 1 * Time.deltaTime);
+                transform.Translate(Vector2.right * speed * 0.5f * Time.deltaTime);
             }
             else
             {
-                transform.Translate(Vector2.left * speed * 1 * Time.deltaTime);
+                transform.Translate(Vector2.left * speed * 0.5f * Time.deltaTime);
             }
-            if (this.gameObject.transform.position.x <= 0)
+            if (this.gameObject.transform.position.x <= -1)
             {
                 changeDirection = true;
             }
-            else if (this.gameObject.transform.position.x >= 2)
+            else if (this.gameObject.transform.position.x >= 3)
             {
                 changeDirection = false;
             }
         }
 
-    
+        IEnumerator SpawnBulletEnemy()
+        {
+            Instantiate(bulletPrefabs, Muzzle.position, Muzzle.rotation);
+            yield return new WaitForSeconds(7f);
+        }
 
         // Update is called once per frame
-        void Update()
-        {
-			Attack();
-        }
+        
     }
 }
 
