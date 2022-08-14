@@ -35,13 +35,12 @@ namespace SpaceInvader.ScoreBoard
                 {
                     currentScoreObj = scoreObjPlace.GetChild(i).GetComponent<UI_ScoreBoard_ScoreObj>();
                 }
-                // if (_model.datas.Count >= i)
-                // {
-                //     currentScoreObj.SetScore(_model.datas[i]);
-                // }
+                if (_model.datas.Count > i)
+                {
+                    currentScoreObj.SetScore(_model.datas[i]);
+                }
             }
         }
-
 
         public void SetButtonCallback()
         {
@@ -50,6 +49,16 @@ namespace SpaceInvader.ScoreBoard
             Debug.Log("Set Callback");
         }
 
+        private void Update()
+        {
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _model.datas.Add(new SocoreBoardData("Data", 10));
+                RefreshScoreBoard();
+            }
+
+        }
         protected override void InitRenderModel(IScoreBoard_Model model)
         {
             RefreshScoreBoard();
