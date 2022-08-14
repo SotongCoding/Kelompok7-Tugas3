@@ -8,6 +8,7 @@ using Agate.MVC.Core;
 using SpaceInvader.Boot;
 using SpaceInvader.Gameplay.PlayerStatus;
 using SpaceInvader.ScoreBoard;
+using SpaceInvader.PowerUps;
 
 namespace SpaceInvader.Gameplay
 {
@@ -30,7 +31,8 @@ namespace SpaceInvader.Gameplay
         {
             return new IController[]
             {
-                new PlayerStatus_Controller()
+                new PlayerStatus_Controller(),
+                new PowerUps_Controller()
             };
         }
 

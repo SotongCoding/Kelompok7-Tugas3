@@ -18,7 +18,6 @@ namespace SpaceInvader.ScoreBoard
         [SerializeField] UI_ScoreBoard_ScoreObj scorePrefab;
         [SerializeField] Transform scoreObjPlace;
 
-
         public void ShowScoreBoard()
         {
             scoreObjPlace.gameObject.SetActive(!scoreObjPlace.gameObject.activeSelf);

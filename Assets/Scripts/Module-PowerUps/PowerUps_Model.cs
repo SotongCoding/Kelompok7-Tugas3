@@ -13,7 +13,7 @@ namespace SpaceInvader.PowerUps
 
         public virtual void OnPick()
         {
-
+            
         }
     }
 }

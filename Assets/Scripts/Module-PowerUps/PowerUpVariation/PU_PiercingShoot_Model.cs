@@ -11,9 +11,7 @@ namespace SpaceInvader.PowerUps
 
         public override void OnPick()
         {
-
-            Debug.Log("Character Shoot hit 2 enemys");
-            
+            Debug.Log("Change Bullet to Piercing Bullet");  
         }
     }
 }
