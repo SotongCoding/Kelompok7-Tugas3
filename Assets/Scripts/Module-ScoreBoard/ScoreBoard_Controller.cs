@@ -23,16 +23,13 @@ namespace SpaceInvader.ScoreBoard
             base.SetView(view);
             view.SetButtonCallback();
 
-            //view.testingAddScore.onClick.AddListener(AddSampleScore);
+            view.testingAddScore.onClick.AddListener(ButtonEvent);
         }
 
-        // void AddSampleScore()
-        // {
-        //     Publish<Messege.AddNewScoreMessege>(
-        //         new Messege.AddNewScoreMessege(
-        //             "Name", 10)
-        //         );
-        // }
+        void ButtonEvent()
+        {
+          Publish<Messege.PlayAuidoMessege>(new Messege.PlayAuidoMessege("sfx_shoot"));
+        }
         public override IEnumerator Initialize()
         {
             _model.LoadData();

@@ -11,22 +11,19 @@ namespace SpaceInvader.Audio
 
         public override IEnumerator Initialize()
         {
-            var allClip = Resources.LoadAll("Audios", typeof(AudioClip));
+            var allClip = Resources.LoadAll("audios", typeof(AudioClip));
             foreach (var item in allClip)
             {
                 allAudioData.Add(item.name, item as AudioClip);
             }
 
-            return base.Finalize();
-        }
-        public override IEnumerator Finalize()
-        {
-            SetView(MonoBehaviour.FindObjectOfType<Audio.Auido_View>());
-            return base.Finalize();
+            return base.Initialize();
         }
 
-        public void OnPlayAudio(Messege.PlayAuidoMessege messege)
+       
+        public void PlayAudio(Messege.PlayAuidoMessege messege)
         {
+            Debug.Log("recive Mes : " + messege.audioName);
             string target = messege.audioName;
             if (!allAudioData.ContainsKey(target)) return;
             string prefix = target.Split('_')[0];
@@ -39,8 +36,6 @@ namespace SpaceInvader.Audio
                 case "sfx":
                     _view.PlaySFX(allAudioData[target]);
                     break;
-
-
             }
         }
     }
