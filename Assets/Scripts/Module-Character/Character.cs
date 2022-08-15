@@ -21,13 +21,13 @@ namespace SpaceInvader.Character
         }*/
 
         
-        public override void Attack()
+        /*public override void Attack()
         {
             if (Input.GetMouseButtonDown(0))
             {
                 //Instantiate(bulletPrefabs, Muzzle.position, Quaternion.identity);
             }
-        }
+        }*/
 
         public void TakeDamage()
         {
@@ -48,7 +48,7 @@ namespace SpaceInvader.Character
         protected void Update()
         {
         //    Move();
-            Attack();
+        //    Attack();
         }
     }
 }

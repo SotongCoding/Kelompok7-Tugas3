@@ -19,6 +19,7 @@ namespace SpaceInvader.Gameplay
             Subscribe<Messege.AddNewScoreMessege>(_scoreBoard.AddNewScore);
             // Subscribe<UpdateScoreMessege>(OnUpdateScore);
             // Subscribe<CharacterDieMessege>(OnCharacterDieMessege);
+            Subscribe<characterTakeDamageMessage>(TakeDamage);
         }
 
         protected override void Disconnect()
@@ -27,6 +28,12 @@ namespace SpaceInvader.Gameplay
             // Unsubscribe<UpdateHealthMessege>(OnUpdateHealth);
             // Unsubscribe<UpdateScoreMessege>(OnUpdateScore);
             // Unsubscribe<CharacterDieMessege>(OnCharacterDieMessege);
+            Unsubscribe<characterTakeDamageMessage>(TakeDamage);
+        }
+
+        void TakeDamage(characterTakeDamageMessage TD)
+        {
+            Debug.Log("HIT");
         }
     }
 }

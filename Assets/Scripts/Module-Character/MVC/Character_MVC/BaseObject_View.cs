@@ -6,8 +6,11 @@ using Agate.MVC.Core;
 
 namespace SpaceInvader.Character
 {
-    public class BaseObject_View : ObjectView<IBaseObject_Model>, IMoveable
+    public class BaseObject_View : ObjectView<IBaseObject_Model>, IMoveable, IAttackable
     {
+        [SerializeField] GameObject bulletPrefabs;
+        public System.Action TakeDamage;
+        public System.Action ShootBullet;
         protected override void InitRenderModel(IBaseObject_Model model)
         {
            
@@ -20,6 +23,11 @@ namespace SpaceInvader.Character
         protected void Update()
         {
             Move(this.transform);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TestDamage();
+            }
+            Attack();
         }
 
         public void Move(Transform T)
@@ -31,6 +39,26 @@ namespace SpaceInvader.Character
             else if (Input.GetKey(KeyCode.LeftArrow) && T.position.x >= -8)
             {
                 transform.Translate(Vector2.left * 10 * 1 * Time.deltaTime);
+            }
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag ("EnemyBullet"))
+            {
+                Debug.Log("HIT");
+            }
+        }
+        void TestDamage()
+        {
+            TakeDamage?.Invoke();
+        }
+
+        public void Attack()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
+                
             }
         }
     }

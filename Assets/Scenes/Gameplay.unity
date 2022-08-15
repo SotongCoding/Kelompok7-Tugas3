@@ -352,8 +352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e366a5c47046a489772f52772cb4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusView: {fileID: 0}
-  scoreBoardView: {fileID: 0}
   baseObjectView: {fileID: 1520237169}
 --- !u!4 &1356000713
 Transform:
@@ -562,6 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4b43bb949c093479809af1827cfcee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefabs: {fileID: 8315256387667478498, guid: 6a44b9a2dbde9e44eb4aa6937326d02b, type: 3}
 --- !u!1 &2132942548
 GameObject:
   m_ObjectHideFlags: 0
