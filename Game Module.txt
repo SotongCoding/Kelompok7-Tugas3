@@ -20,21 +20,24 @@
   void Attack
   ===============
   
-2. [Score] -Sugeng
+2. [PlayerStatus Data] -Sugeng
   void AddScore
   void SaveScore
+  
+  void ReduceHealth
+
   
 3. [PowerUp]- Sugeng
   <IPickAble>
   void OnPick
   
-4. [Bullet] -Sugeng
+4. [Bullet] - Lesman
   void OnCollide
   
-5. [Audio] -Lesman
+5. [Audio] -Sugeng
   voidOnPlay
   
-6. [Spawner] -Sugeng
+6. [Spawner] - Lesman
   void SpawnAlien
   
 7. [LeaderBoard] - Sugeng
