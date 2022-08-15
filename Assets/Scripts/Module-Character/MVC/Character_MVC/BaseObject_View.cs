@@ -23,10 +23,6 @@ namespace SpaceInvader.Character
         protected void Update()
         {
             Move(this.transform);
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                TestDamage();
-            }
             Attack();
         }
 
@@ -45,12 +41,8 @@ namespace SpaceInvader.Character
         {
             if (collision.CompareTag ("EnemyBullet"))
             {
-                Debug.Log("HIT");
+                TakeDamage?.Invoke();
             }
-        }
-        void TestDamage()
-        {
-            TakeDamage?.Invoke();
         }
 
         public void Attack()

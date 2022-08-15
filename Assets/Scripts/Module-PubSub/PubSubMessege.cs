@@ -95,4 +95,10 @@ namespace SpaceInvader.Messege
         
     }
     #endregion
+    #region Enemy
+    public struct EnemyTakeDamageMessage
+    {
+
+    }
+    #endregion
 }
