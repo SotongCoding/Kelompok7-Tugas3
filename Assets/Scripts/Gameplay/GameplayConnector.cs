@@ -6,31 +6,36 @@ using Agate.MVC.Base;
 
 using SpaceInvader.Gameplay.PlayerStatus;
 using SpaceInvader.Messege;
-using SpaceInvader.ScoreBoard;
 
 namespace SpaceInvader.Gameplay
 {
     public class GameplayConnector : BaseConnector
     {
-        private ScoreBoard_Controller _scoreBoard; 
+        private ScoreBoard.ScoreBoard_Controller _scoreBoard;
+        private PowerUps.PowerUps_ControllerContainer _powerUpContainer;
+        Gameplay.PlayerStatus.PlayerStatus_Controller _playerStatus;
 
         protected override void Connect()
         {
-            Subscribe<Messege.AddNewScoreMessege>(_scoreBoard.AddNewScore);
-            // Subscribe<UpdateScoreMessege>(OnUpdateScore);
-            // Subscribe<CharacterDieMessege>(OnCharacterDieMessege);
+            Subscribe<characterTakeDamageMessage>(_playerStatus.CharacterReciveDamage);
             Subscribe<characterTakeDamageMessage>(TakeDamage);
+
             Subscribe<EnemyTakeDamageMessage>(EnemyTakeDamage);
+            Subscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+
+            Subscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
         }
 
         protected override void Disconnect()
         {
-            Unsubscribe<Messege.AddNewScoreMessege>(_scoreBoard.AddNewScore);
-            // Unsubscribe<UpdateHealthMessege>(OnUpdateHealth);
-            // Unsubscribe<UpdateScoreMessege>(OnUpdateScore);
-            // Unsubscribe<CharacterDieMessege>(OnCharacterDieMessege);
+            Unsubscribe<characterTakeDamageMessage>(_playerStatus.CharacterReciveDamage);
             Unsubscribe<characterTakeDamageMessage>(TakeDamage);
+
             Unsubscribe<EnemyTakeDamageMessage>(EnemyTakeDamage);
+            Unsubscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+
+            Unsubscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
+
         }
 
         void TakeDamage(characterTakeDamageMessage TD)

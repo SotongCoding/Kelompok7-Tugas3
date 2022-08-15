@@ -29,15 +29,15 @@ namespace SpaceInvader.Character
             }
         }*/
 
-        public void TakeDamage()
-        {
+        // public void TakeDamage()
+        // {
             
-        }
+        // }
 
-        public void ObjectDestroy()
-        {
-            //Destroy(this.gameObject);
-        }
+        // public void ObjectDestroy()
+        // {
+        //     //Destroy(this.gameObject);
+        // }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag ("EnemyBullet"))

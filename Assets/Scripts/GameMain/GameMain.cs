@@ -10,10 +10,11 @@ namespace SpaceInvader.Boot
 {
     public class GameMain : BaseMain<GameMain>, IMain
     {
+        Audio.Audio_Controller _audio;
         protected override IConnector[] GetConnectors()
         {
             return new IConnector[]{
-                new Audio.Auido_Connector()
+                new Gameplay.GameMain_Connector()
           };
         }
 
@@ -28,7 +29,8 @@ namespace SpaceInvader.Boot
         protected override IEnumerator StartInit()
         {
             CreateEventSystem();
-            //CerateAudioPrefab();
+            CerateAudioPrefab();
+
             yield return null;
         }
         private void CreateEventSystem()
@@ -44,8 +46,9 @@ namespace SpaceInvader.Boot
             var audioSfx = obj.AddComponent<AudioSource>();
             var audioBgm = obj.AddComponent<AudioSource>();
 
-            var audioView = obj.AddComponent<Audio.Auido_View>();
+            var audioView = obj.AddComponent<Audio.Audio_View>();
             audioView.SetAudioSource(audioSfx, audioBgm);
+
             GameObject.DontDestroyOnLoad(obj);
         }
     }

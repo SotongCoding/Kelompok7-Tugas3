@@ -50,6 +50,7 @@ namespace SpaceInvader.Character
             if (Input.GetMouseButtonDown(0))
             {
                 Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
+                ShootBullet?.Invoke();
                 
             }
         }

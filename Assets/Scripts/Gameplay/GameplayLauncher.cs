@@ -18,16 +18,15 @@ namespace SpaceInvader.Gameplay
         public override string SceneName => "Gameplay";
 
         private PlayerStatus_Controller _playerStatusControl;
-        private ScoreBoard_Controller _scoreBoardControl;
         private BaseObject_Controller _baseObjectControl;
         private EnemySatu_Controller _enemySatuControl;
-        private Audio.Audio_Controller _audioControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[]
             {
-                new GameplayConnector()
+                new GameplayConnector(),
+                
             };
         }
 
@@ -37,6 +36,7 @@ namespace SpaceInvader.Gameplay
             {
                 new PlayerStatus_Controller(),
                 new PowerUps_Controller(),
+
                 new BaseObject_Controller(),
                 new EnemySatu_Controller()
             };
@@ -44,11 +44,9 @@ namespace SpaceInvader.Gameplay
 
         protected override IEnumerator InitSceneObject()
         {
-            //_playerStatusControl.SetView(_view.statusView);
-            //_scoreBoardControl.SetView(_view.scoreBoardView);
+            _playerStatusControl.SetView(_view.statusView);
             _baseObjectControl.SetView(_view.baseObjectView);
             _enemySatuControl.SetView(_view.enemySatuView);
-            _audioControl.SetView(_view.audioView);
 
             yield return null;
         }
