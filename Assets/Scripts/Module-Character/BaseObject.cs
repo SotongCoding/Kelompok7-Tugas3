@@ -15,13 +15,13 @@ namespace SpaceInvader.Character
 
         public abstract void Attack();
 
-        public abstract void Move();
+        public abstract void Move(Transform T);
 
 
         // Update is called once per frame
         void Update()
         {
-            Move();
+            //Move();
         }
     }
 }

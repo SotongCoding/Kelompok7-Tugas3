@@ -5,7 +5,7 @@ using SpaceInvader.Pooling;
 
 namespace SpaceInvader.Character
 {
-    public class BaseAlien : BaseObject
+    public class BaseAlien : BaseObject_Model
     {
         private ActivateEnemy Shooter;
         private List<GameObject> Enemyship;
@@ -18,25 +18,26 @@ namespace SpaceInvader.Character
 
         public override void Attack()
         {
-            StartCoroutine(SpawnBulletEnemy());
+            var alienShip = Enemyship[Random.Range(0, Enemyship.Count)];
+            GameObject.Instantiate(bulletPrefabs, alienShip.transform.position, Quaternion.identity);
         }
 
-        public override void Move()
+        public override void Move(Transform T)
         {
             if (changeDirection)
             {
-                transform.Translate(Vector2.right * speed * 0.5f * Time.deltaTime);
+                T.Translate(Vector2.right * speed * 0.5f * Time.deltaTime);
             }
             else
             {
-                transform.Translate(Vector2.left * speed * 0.5f * Time.deltaTime);
+                T.Translate(Vector2.left * speed * 0.5f * Time.deltaTime);
             }
-            if (this.gameObject.transform.position.x <= -5)
+            if (T.position.x <= -5)
             {
                 changeDirection = true;
                 if (counter >= 7)
-                {
-                    MoveDown();
+               {
+                    MoveDown(T);
                     counter = 0;
                 }
                 else
@@ -44,36 +45,34 @@ namespace SpaceInvader.Character
                     counter++;
                 }
             }
-            else if (this.gameObject.transform.position.x >= 0)
+            else if (T.position.x >= 0)
             {
                 changeDirection = false;
                 if (counter >= 7)
                 {
-                    MoveDown();
+                    MoveDown(T);
                     counter = 0;
                 }
                 else
                 {
                     counter++;
-                }
-                
+                }    
             }
         }
         IEnumerator SpawnBulletEnemy()
         {
             while (true)
             {
-                var alienShip = Enemyship[Random.Range(0, Enemyship.Count)]; 
-                Instantiate(bulletPrefabs, alienShip.transform.position, Quaternion.identity);
+                Attack();
                 yield return new WaitForSeconds(2f);
             }
         }
-        private void MoveDown()
+        public virtual void MoveDown(Transform T)
         {
             down.x *= -1f;
-            Vector3 pos = this.transform.position;
+            Vector3 pos = T.position;
             pos.y  -= 1f;
-            this.transform.position = pos;
+            T.position = pos;
         }
         private void Start()
         {
@@ -82,8 +81,8 @@ namespace SpaceInvader.Character
 
         private void Awake()
         {
-            Shooter = GetComponent<ActivateEnemy>();
-            Enemyship = Shooter.AS;
+       //     Shooter = GetComponent<ActivateEnemy>();
+            //Enemyship = Shooter.AS;
         }
 
         // Update is called once per frame

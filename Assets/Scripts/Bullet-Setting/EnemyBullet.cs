@@ -23,7 +23,6 @@ namespace SpaceInvader.BulletSetting
 			if (collision.CompareTag("Player"))
 			{
 				Destroy(gameObject);
-				Debug.Log("HIT");
 			}
 		}
 	}
