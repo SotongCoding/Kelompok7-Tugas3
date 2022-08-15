@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Agate.MVC.Base;
+using Agate.MVC.Core;
 
-public class EnemySatu_Model : MonoBehaviour
+namespace SpaceInvader.Character
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EnemySatu_Model : BaseModel, IEnemySatu_Model
     {
-        
-    }
+        protected int speed = 10;
+        public void ObjectDestroy()
+        {
+            
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void TakeDamage()
+        {
+            
+        }
     }
 }
+
+
