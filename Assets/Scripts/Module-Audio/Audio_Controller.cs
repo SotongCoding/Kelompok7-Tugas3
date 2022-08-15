@@ -17,7 +17,7 @@ namespace SpaceInvader.Audio
                 allAudioData.Add(item.name, item as AudioClip);
             }
 
-            return base.Finalize();
+            return base.Initialize();
         }
         public override IEnumerator Finalize()
         {

@@ -15,5 +15,6 @@ namespace SpaceInvader.Gameplay
         //public PlayerStatus_View statusView;
         //public ScoreBoard_View scoreBoardView;
         public BaseObject_View baseObjectView;
+        public EnemySatu_View enemySatuView;
     }
 }
