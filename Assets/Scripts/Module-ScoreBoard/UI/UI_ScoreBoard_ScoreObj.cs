@@ -12,7 +12,7 @@ namespace SpaceInvader.ScoreBoard
         [SerializeField] public Text playerName;
         [SerializeField] public Text scoreValue;
 
-        internal void SetScore(SocoreBoardData socoreBoardData)
+        internal void SetScore(SocoreData socoreBoardData)
         {
             playerName.text = socoreBoardData.name;
             scoreValue.text = socoreBoardData.score.ToString();

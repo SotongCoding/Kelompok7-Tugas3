@@ -11,6 +11,10 @@ namespace SpaceInvader.PowerUps
     {
         public virtual float dropSpeed => 2;
 
+        public virtual int powerUpId => -1;
+
+        public virtual float duration => 0;
+
         public virtual void OnPick()
         {
             

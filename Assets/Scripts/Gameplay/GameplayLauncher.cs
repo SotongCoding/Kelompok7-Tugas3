@@ -23,7 +23,7 @@ namespace SpaceInvader.Gameplay
         {
             return new IConnector[]
             {
-                new GameplayConnector()
+                new GameplayConnector(),
             };
         }
 
@@ -32,7 +32,9 @@ namespace SpaceInvader.Gameplay
             return new IController[]
             {
                 new PlayerStatus_Controller(),
-                new PowerUps_Controller()
+                
+                new PowerUps_Controller(),
+                new PowerUps_ControllerContainer()
             };
         }
 
@@ -40,6 +42,7 @@ namespace SpaceInvader.Gameplay
         {
             _playerStatusControl.SetView(_view.statusView);
             _scoreBoardControl.SetView(_view.scoreBoardView);
+            
             yield return null;
         }
 

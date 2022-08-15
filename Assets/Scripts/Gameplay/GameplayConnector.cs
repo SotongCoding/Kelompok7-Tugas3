@@ -13,12 +13,10 @@ namespace SpaceInvader.Gameplay
     public class GameplayConnector : BaseConnector
     {
         private ScoreBoard_Controller _scoreBoard;
-        private PlayerStatus_Controller _playerStatus;
-
        
         protected override void Connect()
         {
-            // Subscribe<UpdateHealthMessege>(OnUpdateHealth);
+            Subscribe<Messege.AddNewScoreMessege>(_scoreBoard.AddNewScore);
             // Subscribe<UpdateScoreMessege>(OnUpdateScore);
             // Subscribe<CharacterDieMessege>(OnCharacterDieMessege);
         }

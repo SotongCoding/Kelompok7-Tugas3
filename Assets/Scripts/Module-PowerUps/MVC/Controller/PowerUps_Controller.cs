@@ -10,10 +10,20 @@ namespace SpaceInvader.PowerUps
     public class PowerUps_Controller : ObjectController<PowerUps_Controller, PowerUps_Model, IPowerUps_Model, PowerUps_View>
     {
         //private ScoreBoard.ScoreBoard_Controller _player;
-        internal void Init(PowerUps_Model model, PowerUps_View view)
+        public void Init(PowerUps_Model model, PowerUps_View view)
         {
             _model = model;
             SetView(view);
+
+            view.onPick+= model.OnPick;
+            view.onPick+= PubMes_PickPowerUp;
+        }
+
+        private void PubMes_PickPowerUp(){
+            Publish<Messege.RecivePowerUpMessege>(new Messege.RecivePowerUpMessege(
+                _model.powerUpId,
+                _model.duration
+            ));
         }
     }
 }

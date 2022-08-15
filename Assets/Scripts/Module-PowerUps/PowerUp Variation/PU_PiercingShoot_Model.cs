@@ -8,6 +8,8 @@ namespace SpaceInvader.PowerUps
 {
     public class PU_PiercingShoot : PowerUps_Model
     {
+        public override int powerUpId => 1;
+        public override float duration => 5;
 
         public override void OnPick()
         {

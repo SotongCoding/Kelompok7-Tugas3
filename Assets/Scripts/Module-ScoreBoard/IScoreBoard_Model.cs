@@ -8,6 +8,6 @@ namespace SpaceInvader.ScoreBoard
 {
     public interface IScoreBoard_Model : IBaseModel
     {
-        List<SocoreBoardData> datas { get; }
+        List<SocoreData> datas { get; }
     }
 }

@@ -12,9 +12,9 @@ namespace SpaceInvader.ScoreBoard
     {
         int scoreBoardLimit = 10;
 
-        public List<SocoreBoardData> datas { private set; get; } = new List<SocoreBoardData>();
+        public List<SocoreData> datas { private set; get; } = new List<SocoreData>();
 
-        public void StoreScore(SocoreBoardData newData)
+        public void StoreScore(SocoreData newData)
         {
             datas.Add(newData);
             datas.OrderBy(x => x.score);
@@ -33,18 +33,18 @@ namespace SpaceInvader.ScoreBoard
             if (string.IsNullOrEmpty(loadString)) return;
 
             var jsonLoad = JsonUtility.FromJson<ScoreBoardSaveData>(loadString);
-            datas = new List<SocoreBoardData>(jsonLoad.scoreBoardData);
+            datas = new List<SocoreData>(jsonLoad.scoreBoardData);
         }
     }
 
-    public struct SocoreBoardData
+    public struct SocoreData
     {
         public string name;
         public int score;
 
         public bool isNull => string.IsNullOrEmpty(name);
 
-        public SocoreBoardData(string name, int score)
+        public SocoreData(string name, int score)
         {
             this.name = name;
             this.score = score;
@@ -53,9 +53,9 @@ namespace SpaceInvader.ScoreBoard
 
     struct ScoreBoardSaveData
     {
-        public List<SocoreBoardData> scoreBoardData;
+        public List<SocoreData> scoreBoardData;
 
-        public ScoreBoardSaveData(List<SocoreBoardData> scoreBoardData)
+        public ScoreBoardSaveData(List<SocoreData> scoreBoardData)
         {
             this.scoreBoardData = scoreBoardData;
         }

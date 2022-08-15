@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SpaceInvader.PowerUps;
 using UnityEngine;
 
 namespace SpaceInvader.Messege
@@ -9,6 +10,7 @@ namespace SpaceInvader.Messege
 
     }
 
+    #region PlayerStatus Messege
     public struct UpdateHealthMessege
     {
         public int currentHealth { private set; get; }
@@ -37,4 +39,43 @@ namespace SpaceInvader.Messege
         public int lastScore { private set; get; }
 
     }
+    #endregion
+
+    #region PowerUp Messege
+    public struct SpawnPowerUpMessege
+    {
+        public PowerUps.PowerUps_View powerUpObject;
+        public Vector2 spawnPos;
+
+        public SpawnPowerUpMessege(PowerUps_View powerUpObject, Vector2 spawnPos)
+        {
+            this.powerUpObject = powerUpObject;
+            this.spawnPos = spawnPos;
+        }
+    }
+    public struct RecivePowerUpMessege
+    {
+        public int powerUpId;
+        public float powerUpDuration;
+
+        public RecivePowerUpMessege(int powerUpId, float powerUpDuration)
+        {
+            this.powerUpId = powerUpId;
+            this.powerUpDuration = powerUpDuration;
+        }
+    }
+    #endregion
+
+    #region ScoreBoard Messege
+    public struct AddNewScoreMessege{
+        public string playerName;
+        public int currentPlayerScore;
+
+        public AddNewScoreMessege(string playerName, int currentPlayerScore)
+        {
+            this.playerName = playerName;
+            this.currentPlayerScore = currentPlayerScore;
+        }
+    }
+    #endregion
 }
