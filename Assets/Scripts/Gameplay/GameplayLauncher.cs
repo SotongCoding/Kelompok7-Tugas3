@@ -21,8 +21,9 @@ namespace SpaceInvader.Gameplay
         private ScoreBoard_Controller _scoreBoardControl;
         private BaseObject_Controller _baseObjectControl;
         private EnemySatu_Controller _enemySatuControl;
+        private Audio.Audio_Controller _audioControl;
 
-        protected override IConnector[] GetSceneConnectors() 
+        protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[]
             {
@@ -47,6 +48,8 @@ namespace SpaceInvader.Gameplay
             //_scoreBoardControl.SetView(_view.scoreBoardView);
             _baseObjectControl.SetView(_view.baseObjectView);
             _enemySatuControl.SetView(_view.enemySatuView);
+            _audioControl.SetView(_view.audioView);
+
             yield return null;
         }
 
