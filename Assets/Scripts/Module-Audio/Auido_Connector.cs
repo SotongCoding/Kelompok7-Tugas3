@@ -11,12 +11,12 @@ namespace SpaceInvader.Audio
         Audio_Controller _audio;
         protected override void Connect()
         {
-            Subscribe<Messege.PlayAuidoMessege>(_audio.OnPlayAudio);
+            //Subscribe<Messege.PlayAuidoMessege>(_audio.OnPlayAudio);
         }
 
         protected override void Disconnect()
         {
-            Unsubscribe<Messege.PlayAuidoMessege>(_audio.OnPlayAudio);
+            //Unsubscribe<Messege.PlayAuidoMessege>(_audio.OnPlayAudio);
         }
     }
 }

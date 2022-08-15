@@ -9,6 +9,7 @@ using SpaceInvader.Boot;
 using SpaceInvader.Gameplay.PlayerStatus;
 using SpaceInvader.ScoreBoard;
 using SpaceInvader.PowerUps;
+using SpaceInvader.Character;
 
 namespace SpaceInvader.Gameplay
 {
@@ -18,6 +19,7 @@ namespace SpaceInvader.Gameplay
 
         private PlayerStatus_Controller _playerStatusControl;
         private ScoreBoard_Controller _scoreBoardControl;
+        private BaseObject_Controller _baseObjectControl;
 
         protected override IConnector[] GetSceneConnectors() 
         {
@@ -32,14 +34,16 @@ namespace SpaceInvader.Gameplay
             return new IController[]
             {
                 new PlayerStatus_Controller(),
-                new PowerUps_Controller()
+                new PowerUps_Controller(),
+                new BaseObject_Controller()
             };
         }
 
         protected override IEnumerator InitSceneObject()
         {
-            _playerStatusControl.SetView(_view.statusView);
-            _scoreBoardControl.SetView(_view.scoreBoardView);
+            //_playerStatusControl.SetView(_view.statusView);
+            //_scoreBoardControl.SetView(_view.scoreBoardView);
+            _baseObjectControl.SetView(_view.baseObjectView);
             yield return null;
         }
 

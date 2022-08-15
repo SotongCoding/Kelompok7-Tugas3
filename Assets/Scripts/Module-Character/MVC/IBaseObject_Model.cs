@@ -6,7 +6,7 @@ using Agate.MVC.Core;
 
 namespace SpaceInvader.Character
 {
-    public interface IBaseObject_Model : IBaseModel, IDamageable, IAttackable, IMoveable
+    public interface IBaseObject_Model : IBaseModel, IDamageable, IAttackable
     {
         
     }
