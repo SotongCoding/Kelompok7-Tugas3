@@ -15,13 +15,24 @@ namespace SpaceInvader.ScoreBoard
                     messege.playerName,
                     messege.currentPlayerScore
                 ));
+
         }
 
         public override void SetView(ScoreBoard_View view)
         {
             base.SetView(view);
             view.SetButtonCallback();
+
+            //view.testingAddScore.onClick.AddListener(AddSampleScore);
         }
+
+        // void AddSampleScore()
+        // {
+        //     Publish<Messege.AddNewScoreMessege>(
+        //         new Messege.AddNewScoreMessege(
+        //             "Name", 10)
+        //         );
+        // }
         public override IEnumerator Initialize()
         {
             _model.LoadData();

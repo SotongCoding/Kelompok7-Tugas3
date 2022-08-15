@@ -23,6 +23,8 @@ namespace SpaceInvader.ScoreBoard
 
             SetDataAsDirty();
 
+            Debug.Log("Adding Score : " + newData.name + "|" + newData.score);
+
             var saveString = JsonUtility.ToJson(new ScoreBoardSaveData(datas));
             PlayerPrefs.SetString(saveString, "scoreBoard_save");
         }

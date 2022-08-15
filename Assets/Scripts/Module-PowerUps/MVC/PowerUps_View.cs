@@ -10,6 +10,7 @@ namespace SpaceInvader.PowerUps
     public class PowerUps_View : ObjectView<IPowerUps_Model> // MonoBehaviour
     {
         public System.Action onPick;
+        public System.Action Hancurkan;
         protected override void InitRenderModel(IPowerUps_Model model)
         {
            MovePowerUp();
@@ -41,7 +42,7 @@ namespace SpaceInvader.PowerUps
             if (other.CompareTag("Player"))
             {
                 onPick?.Invoke();
-                Destroy(gameObject);
+                //Hancurkan?.Invoke();
             }
         }
     }
