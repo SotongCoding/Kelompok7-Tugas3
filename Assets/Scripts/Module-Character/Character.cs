@@ -38,6 +38,18 @@ namespace SpaceInvader.Character
         {
             Destroy(this.gameObject);
         }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag ("EnemyBullet"))
+            {
+                Destroy(gameObject);
+            }
+        }
+        protected void Update()
+        {
+            Move();
+            Attack();
+        }
     }
 }
 
