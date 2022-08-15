@@ -12,7 +12,7 @@ namespace SpaceInvader.Gameplay
 {
     public class GameplayConnector : BaseConnector
     {
-        private ScoreBoard_Controller _scoreBoard;
+        private ScoreBoard_Controller _scoreBoard; 
 
         protected override void Connect()
         {

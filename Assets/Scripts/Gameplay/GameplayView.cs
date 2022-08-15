@@ -9,7 +9,7 @@ using SpaceInvader.ScoreBoard;
 
 namespace SpaceInvader.Gameplay
 {
-    public class GameplayView : BaseSceneView
+    public class GameplayView : BaseSceneView 
     {
         public PlayerStatus_View statusView;
         public ScoreBoard_View scoreBoardView;

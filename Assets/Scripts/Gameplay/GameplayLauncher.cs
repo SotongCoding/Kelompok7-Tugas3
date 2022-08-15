@@ -19,7 +19,7 @@ namespace SpaceInvader.Gameplay
         private PlayerStatus_Controller _playerStatusControl;
         private ScoreBoard_Controller _scoreBoardControl;
 
-        protected override IConnector[] GetSceneConnectors()
+        protected override IConnector[] GetSceneConnectors() 
         {
             return new IConnector[]
             {
