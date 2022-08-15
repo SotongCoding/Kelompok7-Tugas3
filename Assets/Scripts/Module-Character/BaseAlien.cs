@@ -16,11 +16,11 @@ namespace SpaceInvader.Character
 
         protected int counter = 0;
 
-        public override void Attack()
+        /*public override void Attack()
         {
             var alienShip = Enemyship[Random.Range(0, Enemyship.Count)];
             GameObject.Instantiate(bulletPrefabs, alienShip.transform.position, Quaternion.identity);
-        }
+        }*/
 
         /*public override void Move(Transform T)
         {
@@ -63,7 +63,7 @@ namespace SpaceInvader.Character
         {
             while (true)
             {
-                Attack();
+            //    Attack();
                 yield return new WaitForSeconds(2f);
             }
         }
@@ -76,7 +76,7 @@ namespace SpaceInvader.Character
         }
         private void Start()
         {
-            Attack();
+            //Attack();
         }
 
         private void Awake()

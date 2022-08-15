@@ -9,10 +9,6 @@ namespace SpaceInvader.Character
     public class BaseObject_Model : BaseModel, IBaseObject_Model
     {
         protected int speed = 10;
-        public virtual void Attack()
-        {
-            
-        }
 
         public virtual void ObjectDestroy()
         {

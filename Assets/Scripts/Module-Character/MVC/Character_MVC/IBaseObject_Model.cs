@@ -6,10 +6,9 @@ using Agate.MVC.Core;
 
 namespace SpaceInvader.Character
 {
-    public class BaseObject_Controller : ObjectController<BaseObject_Controller, BaseObject_Model, IBaseObject_Model, BaseObject_View>
+    public interface IBaseObject_Model : IBaseModel, IDamageable
     {
-       
+        
     }
 }
-
 

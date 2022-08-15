@@ -89,4 +89,10 @@ namespace SpaceInvader.Messege
         }
     }
     #endregion
+    #region Character
+    public struct characterTakeDamageMessage
+    {
+        
+    }
+    #endregion
 }
