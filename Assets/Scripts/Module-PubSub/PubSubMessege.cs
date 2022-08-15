@@ -78,4 +78,15 @@ namespace SpaceInvader.Messege
         }
     }
     #endregion
+
+    #region  Audio Messege
+    public struct PlayAuidoMessege{
+        public string audioName;
+
+        public PlayAuidoMessege(string audioName)
+        {
+            this.audioName = audioName;
+        }
+    }
+    #endregion
 }
