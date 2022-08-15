@@ -14,11 +14,6 @@ namespace SpaceInvader.Character
             
         }
 
-        public virtual void Move(Transform T)
-        {
-            
-        }
-
         public virtual void ObjectDestroy()
         {
             

@@ -8,7 +8,7 @@ namespace SpaceInvader.Character
     {
         [SerializeField] GameObject bulletPrefabs;
         [SerializeField] Transform Muzzle;
-        public override void Move(Transform T)
+        /*public override void Move(Transform T)
         {
             if (Input.GetKey(KeyCode.RightArrow) && T.position.x <= 8)
             {
@@ -18,7 +18,7 @@ namespace SpaceInvader.Character
             {
                 T.Translate(Vector2.left * speed * 1 * Time.deltaTime);
             }
-        }
+        }*/
 
         
         public override void Attack()

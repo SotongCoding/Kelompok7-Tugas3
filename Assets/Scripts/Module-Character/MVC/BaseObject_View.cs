@@ -6,11 +6,11 @@ using Agate.MVC.Core;
 
 namespace SpaceInvader.Character
 {
-    public class BaseObject_View : ObjectView<IBaseObject_Model>
+    public class BaseObject_View : ObjectView<IBaseObject_Model>, IMoveable
     {
         protected override void InitRenderModel(IBaseObject_Model model)
         {
-            _model = new Character();
+           
         }
 
         protected override void UpdateRenderModel(IBaseObject_Model model)
@@ -19,7 +19,19 @@ namespace SpaceInvader.Character
         }
         protected void Update()
         {
-            _model.Move(this.transform);
+            Move(this.transform);
+        }
+
+        public void Move(Transform T)
+        {
+            if (Input.GetKey(KeyCode.RightArrow) && T.position.x <= 8)
+            {
+                transform.Translate(Vector2.right * 10 * 1 * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow) && T.position.x >= -8)
+            {
+                transform.Translate(Vector2.left * 10 * 1 * Time.deltaTime);
+            }
         }
     }
 }

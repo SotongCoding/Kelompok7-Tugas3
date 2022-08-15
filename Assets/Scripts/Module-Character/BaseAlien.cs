@@ -22,7 +22,7 @@ namespace SpaceInvader.Character
             GameObject.Instantiate(bulletPrefabs, alienShip.transform.position, Quaternion.identity);
         }
 
-        public override void Move(Transform T)
+        /*public override void Move(Transform T)
         {
             if (changeDirection)
             {
@@ -58,7 +58,7 @@ namespace SpaceInvader.Character
                     counter++;
                 }    
             }
-        }
+        }*/
         IEnumerator SpawnBulletEnemy()
         {
             while (true)
