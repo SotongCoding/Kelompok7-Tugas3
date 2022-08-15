@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace SpaceInvader.Character
 {
-    public class Character : BaseObject
+    public class Character : BaseObject, IDamageable
     {
-        
-        public override void Move()
+        [SerializeField] GameObject bulletPrefabs;
+        [SerializeField] Transform Muzzle;
+        public override void Move(Transform T)
         {
             if (Input.GetKey(KeyCode.RightArrow) && this.gameObject.transform.position.x <= 8)
             {
@@ -19,20 +20,35 @@ namespace SpaceInvader.Character
             }
         }
 
-        public override void ObjectDestroy()
-        {
-            base.ObjectDestroy();
-        }
-        public override void TakeDamage()
-        {
-            
-        }
+        
         public override void Attack()
         {
             if (Input.GetMouseButtonDown(0))
             {
-
+                Instantiate(bulletPrefabs, Muzzle.position, Quaternion.identity);
             }
+        }
+
+        public void TakeDamage()
+        {
+            
+        }
+
+        public void ObjectDestroy()
+        {
+            Destroy(this.gameObject);
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag ("EnemyBullet"))
+            {
+                Destroy(gameObject);
+            }
+        }
+        protected void Update()
+        {
+        //    Move();
+            Attack();
         }
     }
 }

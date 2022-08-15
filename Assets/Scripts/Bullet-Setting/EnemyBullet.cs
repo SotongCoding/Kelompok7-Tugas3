@@ -6,7 +6,7 @@ namespace SpaceInvader.BulletSetting
 {
 	public class EnemyBullet : MonoBehaviour
 	{
-		[SerializeField] private float bulletSpeed = 5f;
+		[SerializeField] private float bulletSpeed = 0.5f;
 		// Start is called before the first frame update
 		void Start()
 		{
@@ -17,6 +17,13 @@ namespace SpaceInvader.BulletSetting
 		void Update()
 		{
 			transform.Translate (Vector2.down * bulletSpeed * Time.deltaTime);
+		}
+		private void OnTriggerEnter2D(Collider2D collision)
+		{
+			if (collision.CompareTag("Player"))
+			{
+				Destroy(gameObject);
+			}
 		}
 	}
 }
