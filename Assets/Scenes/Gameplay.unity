@@ -724,6 +724,7 @@ MonoBehaviour:
   statusView: {fileID: 528931499}
   baseObjectView: {fileID: 1520237169}
   enemySatuView: {fileID: 1444534433}
+  alienShipView: {fileID: 201704188556820606, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
 --- !u!4 &1356000713
 Transform:
   m_ObjectHideFlags: 0
@@ -784,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a922b8224aab3544bbae933acd4d5406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: {fileID: 6096479264034589456, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
+  enemyPrefabs: {fileID: 201704188556820606, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
   AS: []
 --- !u!114 &1444534433
 MonoBehaviour:

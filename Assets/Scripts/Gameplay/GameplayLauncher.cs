@@ -20,6 +20,7 @@ namespace SpaceInvader.Gameplay
         private PlayerStatus_Controller _playerStatusControl;
         private BaseObject_Controller _baseObjectControl;
         private EnemySatu_Controller _enemySatuControl;
+        private AlienShip_Controller _alienShipControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -38,7 +39,8 @@ namespace SpaceInvader.Gameplay
                 new PowerUps_Controller(),
 
                 new BaseObject_Controller(),
-                new EnemySatu_Controller()
+                new EnemySatu_Controller(),
+                new AlienShip_Controller()
             };
         }
 
@@ -47,6 +49,7 @@ namespace SpaceInvader.Gameplay
             _playerStatusControl.SetView(_view.statusView);
             _baseObjectControl.SetView(_view.baseObjectView);
             _enemySatuControl.SetView(_view.enemySatuView);
+            _alienShipControl.SetView(_view.alienShipView);
 
             yield return null;
         }

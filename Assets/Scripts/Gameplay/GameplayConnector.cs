@@ -6,6 +6,7 @@ using Agate.MVC.Base;
 
 using SpaceInvader.Gameplay.PlayerStatus;
 using SpaceInvader.Messege;
+using SpaceInvader.Character;
 
 namespace SpaceInvader.Gameplay
 {
@@ -14,6 +15,7 @@ namespace SpaceInvader.Gameplay
         private ScoreBoard.ScoreBoard_Controller _scoreBoard;
         private PowerUps.PowerUps_ControllerContainer _powerUpContainer;
         Gameplay.PlayerStatus.PlayerStatus_Controller _playerStatus;
+        private AlienShip_Controller _alienShip;
 
         protected override void Connect()
         {
@@ -22,6 +24,7 @@ namespace SpaceInvader.Gameplay
 
             Subscribe<EnemyTakeDamageMessage>(EnemyTakeDamage);
             Subscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            Subscribe<AlienTakeDamageMessage>(AlienTakeDamage);
 
             Subscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
         }
@@ -33,6 +36,7 @@ namespace SpaceInvader.Gameplay
 
             Unsubscribe<EnemyTakeDamageMessage>(EnemyTakeDamage);
             Unsubscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            Unsubscribe<AlienTakeDamageMessage>(AlienTakeDamage);
 
             Unsubscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
 
@@ -45,6 +49,10 @@ namespace SpaceInvader.Gameplay
         void EnemyTakeDamage(EnemyTakeDamageMessage ETD)
         {
             Debug.Log("Destroy");
+        }
+        void AlienTakeDamage(AlienTakeDamageMessage ATD)
+        {
+            Debug.Log("Hancur");
         }
     }
 }

@@ -7,7 +7,7 @@ namespace SpaceInvader.Pooling
 {
     public class ActivateEnemy : MonoBehaviour
     {
-        [SerializeField] private AlienShip enemyPrefabs;
+        [SerializeField] private AlienShip_View enemyPrefabs;
         private int rows = 3;
         private int columns = 6;
         public int amountKilled { get; private set; }
@@ -28,7 +28,7 @@ namespace SpaceInvader.Pooling
 
                 for (int column = 0; column < this.columns; column++)
                 {
-                    AlienShip enemyShip = Instantiate(this.enemyPrefabs, this.transform);
+                    AlienShip_View enemyShip = Instantiate(enemyPrefabs, transform);
                     enemyShip.killed += alienKilled;
                     Vector3 position = rowPos;
                     position.x += column * 2.0f;

@@ -13,5 +13,6 @@ namespace SpaceInvader.Gameplay
         public Gameplay.PlayerStatus.PlayerStatus_View statusView;
         public BaseObject_View baseObjectView;
         public EnemySatu_View enemySatuView;
+        public AlienShip_View alienShipView;
     }
 }
