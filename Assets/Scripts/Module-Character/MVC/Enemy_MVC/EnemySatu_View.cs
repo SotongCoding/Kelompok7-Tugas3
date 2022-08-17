@@ -35,7 +35,7 @@ namespace SpaceInvader.Character
             if (T.position.x <= -5)
             {
                 changeDirection = true;
-                if (counter >= 7)
+                if (counter >= 8)
                 {
                     MoveDown();
                     counter = 0;
@@ -48,7 +48,7 @@ namespace SpaceInvader.Character
             else if (T.position.x >= 0)
             {
                 changeDirection = false;
-                if (counter >= 7)
+                if (counter >= 8)
                 {
                     MoveDown();
                     counter = 0;

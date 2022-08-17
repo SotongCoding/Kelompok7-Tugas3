@@ -107,4 +107,10 @@ namespace SpaceInvader.Messege
 
     }
     #endregion
+    #region AlienShip
+    public struct UfoTakeDamageMessage
+    {
+
+    }
+    #endregion
 }
