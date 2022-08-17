@@ -18,7 +18,7 @@ namespace SpaceInvader.ScoreBoard
         [SerializeField] UI_ScoreBoard_ScoreObj scorePrefab;
         [SerializeField] Transform scoreObjPlace;
 
-        //public Button testingAddScore;
+        public Button testingAddScore;
 
         public void ShowScoreBoard()
         {

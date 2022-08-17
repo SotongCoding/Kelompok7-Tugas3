@@ -5,13 +5,17 @@ using UnityEngine;
 
 namespace SpaceInvader.Audio
 {
-    public class Audio_Controller : ObjectController<Audio_Controller, Auido_View>
+    public class Audio_Controller : ObjectController<Audio_Controller, Audio_View>
     {
         public Dictionary<string, AudioClip> allAudioData = new Dictionary<string, AudioClip>();
 
+        public override void SetView(Audio_View view)
+        {
+            base.SetView(GameObject.FindObjectOfType<Audio_View>());
+        }
         public override IEnumerator Initialize()
         {
-            var allClip = Resources.LoadAll("Audios", typeof(AudioClip));
+            var allClip = Resources.LoadAll("audios", typeof(AudioClip));
             foreach (var item in allClip)
             {
                 allAudioData.Add(item.name, item as AudioClip);
@@ -19,16 +23,12 @@ namespace SpaceInvader.Audio
 
             return base.Initialize();
         }
-        public override IEnumerator Finalize()
-        {
-            SetView(MonoBehaviour.FindObjectOfType<Audio.Auido_View>());
-            return base.Finalize();
-        }
 
-        public void OnPlayAudio(Messege.PlayAuidoMessege messege)
+        public void PlayAudio(Messege.PlayAuidoMessege messege)
         {
             string target = messege.audioName;
             if (!allAudioData.ContainsKey(target)) return;
+            
             string prefix = target.Split('_')[0];
 
             switch (prefix)
@@ -39,8 +39,6 @@ namespace SpaceInvader.Audio
                 case "sfx":
                     _view.PlaySFX(allAudioData[target]);
                     break;
-
-
             }
         }
     }

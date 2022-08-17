@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2886816349858502436}
   - component: {fileID: 8538694620728120417}
   - component: {fileID: 3094251550668975401}
-  - component: {fileID: 6096479264034589456}
+  - component: {fileID: 201704188556820606}
   m_Layer: 7
   m_Name: AlienNormal
   m_TagString: Enemy
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93, y: 0.84}
   m_EdgeRadius: 0
---- !u!114 &6096479264034589456
+--- !u!114 &201704188556820606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5115287416303585787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd29850a3e1a3b84dad85b9663fff80c, type: 3}
+  m_Script: {fileID: 11500000, guid: c3bc95deed7a2cd47a98fa04f6361f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -15,14 +15,14 @@ namespace SpaceInvader.Gameplay.PlayerStatus
 
         protected override void InitRenderModel(IPlayerStatus_Model model)
         {
-            playerScore.text = model.currentScore.ToString();
-            playerHealth.text = model.playerHealth.ToString();
+            playerScore.text = "Score : " + model.currentScore.ToString();
+            playerHealth.text = "Health : " + model.playerHealth.ToString();
         }
 
         protected override void UpdateRenderModel(IPlayerStatus_Model model)
         {
-            playerScore.text = model.currentScore.ToString();
-            playerHealth.text = model.playerHealth.ToString();
+            playerScore.text = "Score : " + model.currentScore.ToString();
+            playerHealth.text = "Health : " + model.playerHealth.ToString();
         }
     }
 }

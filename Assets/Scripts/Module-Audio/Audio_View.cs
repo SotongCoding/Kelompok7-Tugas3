@@ -5,21 +5,24 @@ using Agate.MVC.Base;
 
 namespace SpaceInvader.Audio
 {
-    public class Auido_View : BaseView
+    public class Audio_View : BaseView
     {
-        AudioSource sfxSource;
-        AudioSource bgmSource;
+        [SerializeField] AudioSource sfxSource;
+        [SerializeField] AudioSource bgmSource;
 
-        public void SetAudioSource(AudioSource sfx, AudioSource bgm){
+        public void SetAudioSource(AudioSource sfx, AudioSource bgm)
+        {
             sfxSource = sfx;
             bgmSource = bgm;
         }
-        public void PlaySFX(AudioClip sfxClip){
+        public void PlaySFX(AudioClip sfxClip)
+        {
             sfxSource.PlayOneShot(sfxClip);
         }
-        public void PlayBGM (AudioClip bgmClip){
+        public void PlayBGM(AudioClip bgmClip)
+        {
             bgmSource.clip = bgmClip;
             bgmSource.Play();
-        }         
+        }
     }
 }

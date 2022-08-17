@@ -10,9 +10,14 @@ namespace SpaceInvader.Gameplay.PlayerStatus
     {
         public int currentScore { private set; get; }
         public int playerHealth { private set; get; }
-        
+
+
         public string playerName { private set; get; }
 
+        public void InitialStatus()
+        {
+            playerHealth = 10;
+        }
         public void AddScore(int value)
         {
             currentScore += value;
