@@ -17,9 +17,15 @@ namespace SpaceInvader.PowerUps
 
             view.onPick += model.OnPick;
             view.onPick += PubMes_PickPowerUp;
+            view.onPick += DestroyPU;
 
             view.MovePowerUp();
 
+        }
+
+        void DestroyPU()
+        {
+            MonoBehaviour.Destroy(_view.gameObject);
         }
 
         private void PubMes_PickPowerUp()

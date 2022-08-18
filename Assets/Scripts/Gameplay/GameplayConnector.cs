@@ -33,7 +33,7 @@ namespace SpaceInvader.Gameplay
 
             //Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
-            Subscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
+            Subscribe<CharacterDieMessege>(_scoreBoard.AddNewScore);
 
         }
 
@@ -51,7 +51,7 @@ namespace SpaceInvader.Gameplay
 
             //Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
-            Unsubscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
+            Unsubscribe<CharacterDieMessege>(_scoreBoard.AddNewScore);
 
         }
 

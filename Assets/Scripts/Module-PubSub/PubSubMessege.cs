@@ -58,20 +58,6 @@ namespace SpaceInvader.Messege
     }
     #endregion
 
-    #region ScoreBoard Messege
-    public struct AddNewScoreMessege
-    {
-        public string playerName;
-        public int currentPlayerScore;
-
-        public AddNewScoreMessege(string playerName, int currentPlayerScore)
-        {
-            this.playerName = playerName;
-            this.currentPlayerScore = currentPlayerScore;
-        }
-    }
-    #endregion
-
     #region  Audio Messege
     public struct PlayAuidoMessege
     {

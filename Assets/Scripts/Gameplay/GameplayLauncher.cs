@@ -22,17 +22,17 @@ namespace SpaceInvader.Gameplay
         private PlayerStatus_Controller _playerStatusControl;
         private BaseObject_Controller _baseObjectControl;
         private EnemySatu_Controller _enemySatuControl;
-        private AlienShip_Controller _alienShipControl;
         private UFO_Controller _ufoControl;
         private ActivateEnemy_Controller _activateControl;
         private Audio_Controller _audioControl;
+        private ScoreBoard_Controller _scoreBoardControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[]
             {
                 new GameplayConnector(),
-                
+
             };
         }
 
@@ -45,7 +45,7 @@ namespace SpaceInvader.Gameplay
 
                 new BaseObject_Controller(),
                 new EnemySatu_Controller(),
-                new AlienShip_Controller(),
+                //new AlienShip_Controller(),
                 new UFO_Controller(),
                 new ActivateEnemy_Controller(),
                 new PowerUps_ControllerContainer()
@@ -55,13 +55,16 @@ namespace SpaceInvader.Gameplay
         protected override IEnumerator InitSceneObject()
         {
             _playerStatusControl.SetView(_view.statusView);
+
             _baseObjectControl.SetView(_view.baseObjectView);
             _enemySatuControl.SetView(_view.enemySatuView);
-            _alienShipControl.SetView(_view.alienShipView);
+
+            //_alienShipControl.SetView(_view.alienShipView);
             _ufoControl.SetView(_view.ufoView);
             _activateControl.SetView(_view.activateView);
+
             _audioControl.SetView(FindObjectOfType<Audio_View>());
-            
+            _scoreBoardControl.SetView(_view.scoreBoard_view);
 
             yield return null;
         }
@@ -69,7 +72,7 @@ namespace SpaceInvader.Gameplay
         protected override IEnumerator LaunchScene()
         {
             _activateControl.init();
-            _alienShipControl.init();
+            //_alienShipControl.init();
             yield return null;
         }
     }

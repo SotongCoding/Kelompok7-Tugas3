@@ -22,8 +22,7 @@ namespace SpaceInvader.Gameplay.PlayerStatus
 
             if (_model.playerHealth <= 0)
             {
-                Debug.Log("playerDie");
-                // Publish<CharacterDieMessege>(new CharacterDieMessege(_model.playerName, _model.currentScore));
+                Publish<CharacterDieMessege>(new CharacterDieMessege(_model.playerName, _model.currentScore));
             }
         }
 
