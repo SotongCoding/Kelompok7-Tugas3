@@ -542,7 +542,7 @@ RectTransform:
   - {fileID: 29975428}
   - {fileID: 57184528}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -563,6 +563,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: {fileID: 29975431}
   playerHealth: {fileID: 57184531}
+--- !u!1 &571594262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571594265}
+  - component: {fileID: 571594264}
+  - component: {fileID: 571594263}
+  m_Layer: 0
+  m_Name: Boundary (2)
+  m_TagString: BatasUfo
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &571594263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571594262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e431bcfe2792d43a62f21128e8adc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &571594264
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571594262}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4981122, y: -0.19482613}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.571626, y: 0.61034775}
+  m_EdgeRadius: 0
+--- !u!4 &571594265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571594262}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 9.12, y: -0.46, z: 0.011651438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &815990440
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +677,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240306307
 GameObject:
@@ -725,6 +796,7 @@ MonoBehaviour:
   baseObjectView: {fileID: 1520237169}
   enemySatuView: {fileID: 1444534433}
   alienShipView: {fileID: 201704188556820606, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
+  ufoView: {fileID: 0}
 --- !u!4 &1356000713
 Transform:
   m_ObjectHideFlags: 0
@@ -738,7 +810,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444534429
 GameObject:
@@ -786,7 +858,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs: {fileID: 201704188556820606, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
-  AS: []
+  parent: {fileID: 1444534429}
+  AS:
+  - {fileID: 5115287416303585787, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
 --- !u!114 &1444534433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +1021,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefabs: {fileID: 8315256387667478498, guid: 6a44b9a2dbde9e44eb4aa6937326d02b, type: 3}
+--- !u!1 &1864862086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864862087}
+  - component: {fileID: 1864862088}
+  m_Layer: 0
+  m_Name: SpawnerUFO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1864862087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864862086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.89, y: 4.23, z: 0.006149344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1864862088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864862086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3607f33cf98754a94099b836af1f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ufoPrefabs: {fileID: 3930585175781565186, guid: 7c5f662d2ae15984c96440450f94f86f, type: 3}
 --- !u!1 &2132942548
 GameObject:
   m_ObjectHideFlags: 0

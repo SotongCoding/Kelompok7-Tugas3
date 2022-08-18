@@ -13,10 +13,33 @@ namespace SpaceInvader.Pooling
         public int amountKilled { get; private set; }
         [SerializeField] private int total => this.rows * this.columns;
         [SerializeField] private float percentKilled  => (float)this.amountKilled / (float)this.total;
+        [SerializeField] GameObject parent;
 
         public List<GameObject> AS = new List<GameObject>();
 
         private void Awake()
+        {
+            Spawn();
+
+        }
+        private void RespawnEnemy()
+        {
+
+          Transform[] allChildren = GetComponentsInChildren<Transform>();
+          foreach (Transform child in allChildren)
+          {
+              child.gameObject.SetActive(true);
+          }
+        }
+    private void alienKilled()
+        {
+            this.amountKilled++;
+        }
+        private void Update()
+        {
+            
+        }
+        private void Spawn()
         {
             for (int row = 0; row < this.rows; row++)
             {
@@ -36,10 +59,6 @@ namespace SpaceInvader.Pooling
                     AS.Add(enemyShip.gameObject);
                 }
             }
-        }
-        private void alienKilled()
-        {
-            this.amountKilled++;
         }
     }
 }

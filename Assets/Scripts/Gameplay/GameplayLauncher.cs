@@ -21,6 +21,7 @@ namespace SpaceInvader.Gameplay
         private BaseObject_Controller _baseObjectControl;
         private EnemySatu_Controller _enemySatuControl;
         private AlienShip_Controller _alienShipControl;
+        private UFO_Controller _ufoControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -40,7 +41,8 @@ namespace SpaceInvader.Gameplay
 
                 new BaseObject_Controller(),
                 new EnemySatu_Controller(),
-                new AlienShip_Controller()
+                new AlienShip_Controller(),
+                new UFO_Controller()
             };
         }
 
@@ -50,6 +52,8 @@ namespace SpaceInvader.Gameplay
             _baseObjectControl.SetView(_view.baseObjectView);
             _enemySatuControl.SetView(_view.enemySatuView);
             _alienShipControl.SetView(_view.alienShipView);
+            //_ufoControl.SetView(_view.ufoView);
+            
 
             yield return null;
         }
