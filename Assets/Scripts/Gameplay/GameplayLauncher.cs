@@ -11,6 +11,7 @@ using SpaceInvader.ScoreBoard;
 using SpaceInvader.PowerUps;
 using SpaceInvader.Character;
 using SpaceInvader.Pooling;
+using SpaceInvader.Audio;
 
 namespace SpaceInvader.Gameplay
 {
@@ -24,6 +25,7 @@ namespace SpaceInvader.Gameplay
         private AlienShip_Controller _alienShipControl;
         private UFO_Controller _ufoControl;
         private ActivateEnemy_Controller _activateControl;
+        private Audio_Controller _audioControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -45,7 +47,8 @@ namespace SpaceInvader.Gameplay
                 new EnemySatu_Controller(),
                 new AlienShip_Controller(),
                 new UFO_Controller(),
-                new ActivateEnemy_Controller()
+                new ActivateEnemy_Controller(),
+                new PowerUps_ControllerContainer()
             };
         }
 
@@ -57,6 +60,7 @@ namespace SpaceInvader.Gameplay
             _alienShipControl.SetView(_view.alienShipView);
             _ufoControl.SetView(_view.ufoView);
             _activateControl.SetView(_view.activateView);
+            _audioControl.SetView(FindObjectOfType<Audio_View>());
             
 
             yield return null;

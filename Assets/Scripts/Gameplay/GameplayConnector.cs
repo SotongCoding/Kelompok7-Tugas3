@@ -29,7 +29,10 @@ namespace SpaceInvader.Gameplay
             Subscribe<UfoTakeDamageMessage>(UfoTakeDamage);
             Subscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
 
+            Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
+
             Subscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
+
         }
 
         protected override void Disconnect()
@@ -41,6 +44,8 @@ namespace SpaceInvader.Gameplay
             Unsubscribe<AlienTakeDamageMessage>(AlienTakeDamage);
             Unsubscribe<UfoTakeDamageMessage>(UfoTakeDamage);
             Unsubscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
+
+            Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
             Unsubscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
 

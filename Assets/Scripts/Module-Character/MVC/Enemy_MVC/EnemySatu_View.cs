@@ -98,7 +98,7 @@ namespace SpaceInvader.Character
             Move(this.transform);
             
         }
-        private void Start()
+        private void OnEnable()
         {
             Attack();
         }

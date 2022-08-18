@@ -7,8 +7,7 @@ namespace SpaceInvader.PowerUps
     public interface IPowerUps_Model : IBaseModel, IPickAble
     {
         int powerUpId { get; }
-
-        float dropSpeed { get; }
         float duration { get; }
+        float dropSpeed { get; }
     }
 }

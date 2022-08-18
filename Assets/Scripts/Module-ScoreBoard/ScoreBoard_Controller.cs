@@ -28,7 +28,7 @@ namespace SpaceInvader.ScoreBoard
 
         void ButtonEvent()
         {
-          Publish<Messege.PlayAuidoMessege>(new Messege.PlayAuidoMessege("sfx_shoot"));
+            Publish<Messege.SpawnPowerUpMessege>(new Messege.SpawnPowerUpMessege(_view.powerUpPrefab,Vector2.zero));
         }
         public override IEnumerator Initialize()
         {

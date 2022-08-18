@@ -22,14 +22,13 @@ namespace SpaceInvader.PowerUps
         private void SpawnPowerUp(PowerUps_View createdPowerUp_view, Vector2 spawnLocation)
         {
             PowerUps_Model model = avaiablePowerUp[Random.Range(0, avaiablePowerUp.Length)];
-            GameObject instanceObject = GameObject.Instantiate(createdPowerUp_view).gameObject;
+            PowerUps_View instanceObject = GameObject.Instantiate(createdPowerUp_view);
+
             PowerUps_Controller instance = new PowerUps_Controller();
 
             InjectDependencies(instance);
 
-            instance.Init(model, createdPowerUp_view);
-
-            //createdPowerUp_view.MovePowerUp();
+            instance.Init(model, instanceObject);
         }
 
 
