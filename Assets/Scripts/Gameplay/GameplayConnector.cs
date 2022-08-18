@@ -18,6 +18,7 @@ namespace SpaceInvader.Gameplay
         private Character.AlienShip_Controller _alienShip;
         private Character.UFO_Controller _ufo;
         private Pooling.ActivateEnemy_Controller _activateEnemy;
+        private Character.BaseObject_Controller _character;
 
         protected override void Connect()
         {
@@ -27,6 +28,7 @@ namespace SpaceInvader.Gameplay
             Subscribe<AlienTakeDamageMessage>(_powerUpContainer.OnAlienShipDie);
             Subscribe<AlienTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
             Subscribe<UfoTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            Subscribe<RecivePowerUpMessege>(_character.GetPowerUp);
             //Subscribe<UfoTakeDamageMessage>(UfoTakeDamage);
 
             Subscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
@@ -45,8 +47,9 @@ namespace SpaceInvader.Gameplay
             Unsubscribe<AlienTakeDamageMessage>(_powerUpContainer.OnAlienShipDie);
             Unsubscribe<AlienTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
             Unsubscribe<UfoTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            Unsubscribe<RecivePowerUpMessege>(_character.GetPowerUp);
             //Unsubscribe<UfoTakeDamageMessage>(UfoTakeDamage);
-            
+
             Unsubscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
 
             //Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);

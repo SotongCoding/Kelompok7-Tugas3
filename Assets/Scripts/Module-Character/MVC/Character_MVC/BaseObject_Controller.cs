@@ -4,6 +4,7 @@ using UnityEngine;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
 using SpaceInvader.Messege;
+using SpaceInvader.PowerUps;
 
 namespace SpaceInvader.Character
 {
@@ -23,6 +24,11 @@ namespace SpaceInvader.Character
         private void ShootBullet()
         {
             Publish<PlayAuidoMessege>(new PlayAuidoMessege("sfx_shoot"));
+        }
+        public void GetPowerUp(RecivePowerUpMessege MSG)
+        {
+            _view.ChangeBullet(MSG.powerUpId);
+            _view.GetDuration(MSG.powerUpDuration);
         }
     }
 }
