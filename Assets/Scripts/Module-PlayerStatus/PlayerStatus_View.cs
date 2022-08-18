@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 using Agate.MVC.Base;
+using SpaceInvader.Boot;
 
 namespace SpaceInvader.Gameplay.PlayerStatus
 {
@@ -12,6 +13,11 @@ namespace SpaceInvader.Gameplay.PlayerStatus
     {
         [SerializeField] TextMeshProUGUI playerScore;
         [SerializeField] Image[] playerHealth;
+
+        [SerializeField] GameObject GameOverUI;
+        public InputField nameInput;
+
+        public System.Action DonePlaying;
 
         protected override void InitRenderModel(IPlayerStatus_Model model)
         {
@@ -30,6 +36,17 @@ namespace SpaceInvader.Gameplay.PlayerStatus
             {
                 playerHealth[i].gameObject.SetActive(false);
             }
+        }
+
+        public void ShowGameOverUI()
+        {
+            GameOverUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+        public void Done()
+        {
+            DonePlaying?.Invoke();
+            // SceneLoader.Instance.LoadScene("GamePlay");
         }
     }
 }

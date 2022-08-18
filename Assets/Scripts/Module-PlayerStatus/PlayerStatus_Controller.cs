@@ -29,6 +29,11 @@ namespace SpaceInvader.Gameplay.PlayerStatus
         public override IEnumerator Finalize()
         {
             _model.InitialStatus();
+            _view.DonePlaying += () =>
+            {
+                _model.SetPlayerName(_view.nameInput.text);
+                Publish<Messege.SendScoreBoardScoreMessege>(new SendScoreBoardScoreMessege(_model.playerName, _model.currentScore));
+            };
             return base.Finalize();
         }
 
@@ -43,6 +48,11 @@ namespace SpaceInvader.Gameplay.PlayerStatus
         public void EnemyTakeDamage(Messege.UfoTakeDamageMessage messege)
         {
             ScoreKilledEnemy(50);
+        }
+
+        public void ShowGameOver(Messege.CharacterDieMessege messege)
+        {
+            _view.ShowGameOverUI();
         }
     }
 }

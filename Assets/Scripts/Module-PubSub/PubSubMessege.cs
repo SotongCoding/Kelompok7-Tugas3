@@ -13,6 +13,19 @@ namespace SpaceInvader.Messege
 
     }
 
+    #region  Score Board
+    public struct SendScoreBoardScoreMessege{
+        public string playerName;
+        public int currentScore;
+
+        public SendScoreBoardScoreMessege(string playerName, int currentScore)
+        {
+            this.playerName = playerName;
+            this.currentScore = currentScore;
+        }
+    }
+    #endregion
+
     #region PlayerStatus Messege
     public struct UpdateHealthMessege
     {
@@ -69,6 +82,7 @@ namespace SpaceInvader.Messege
         }
     }
     #endregion
+   
     #region Character
     public struct characterTakeDamageMessage
     {
@@ -91,6 +105,7 @@ namespace SpaceInvader.Messege
 
     }
     #endregion
+   
     #region AlienShipSpawnMessage
     public struct AlienShipSpawnMessage
     {

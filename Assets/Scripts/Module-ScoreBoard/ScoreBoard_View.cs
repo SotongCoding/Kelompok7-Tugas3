@@ -25,8 +25,10 @@ namespace SpaceInvader.ScoreBoard
 
         void RefreshScoreBoard()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
+                if (_model.datas.Count <= i) return;
+
                 UI_ScoreBoard_ScoreObj currentScoreObj;
                 if (scoreObjPlace.childCount <= i)
                     currentScoreObj = Instantiate(scorePrefab, scoreObjPlace);
@@ -43,11 +45,13 @@ namespace SpaceInvader.ScoreBoard
 
         protected override void InitRenderModel(IScoreBoard_Model model)
         {
-            RefreshScoreBoard();
+            if (scoreBoardObj != null)
+                RefreshScoreBoard();
         }
         protected override void UpdateRenderModel(IScoreBoard_Model model)
         {
-            RefreshScoreBoard();
+            if (scoreBoardObj != null)
+                RefreshScoreBoard();
         }
 
     }
