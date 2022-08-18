@@ -28,7 +28,7 @@ namespace SpaceInvader.ScoreBoard
 
         void ButtonEvent()
         {
-            Publish<Messege.SpawnPowerUpMessege>(new Messege.SpawnPowerUpMessege(_view.powerUpPrefab,Vector2.zero));
+            //Publish<Messege.SpawnPowerUpMessege>(new Messege.SpawnPowerUpMessege(_view.powerUpPrefab,Vector2.zero));
         }
         public override IEnumerator Initialize()
         {

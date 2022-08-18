@@ -9,14 +9,16 @@ namespace SpaceInvader.Character
 {
     public class AlienShip_Controller : ObjectController<AlienShip_Controller, AlienShip_View>
     {
-        
-        public void init()
+
+        public void init(AlienShip_View view)
         {
-            _view.damaged += TakeDamage;
+            view.damaged += TakeDamage;
+            SetView(view);
         }
         private void TakeDamage()
         {
-            Publish<AlienTakeDamageMessage>(new AlienTakeDamageMessage());
+            Publish<AlienTakeDamageMessage>(new AlienTakeDamageMessage(_view.transform.position));
+            Publish<PlayAuidoMessege>(new PlayAuidoMessege("sfx_enemyDestroy"));
         }
     }
 }

@@ -22,14 +22,16 @@ namespace SpaceInvader.Gameplay
         protected override void Connect()
         {
             Subscribe<characterTakeDamageMessage>(_playerStatus.CharacterReciveDamage);
-            Subscribe<characterTakeDamageMessage>(TakeDamage);
 
-            Subscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
-            Subscribe<AlienTakeDamageMessage>(AlienTakeDamage);
-            Subscribe<UfoTakeDamageMessage>(UfoTakeDamage);
+            // Subscribe<AlienTakeDamageMessage>(AlienTakeDamage);
+            Subscribe<AlienTakeDamageMessage>(_powerUpContainer.OnAlienShipDie);
+            Subscribe<AlienTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            Subscribe<UfoTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            //Subscribe<UfoTakeDamageMessage>(UfoTakeDamage);
+
             Subscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
 
-            Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
+            //Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
             Subscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
 
@@ -38,26 +40,25 @@ namespace SpaceInvader.Gameplay
         protected override void Disconnect()
         {
             Unsubscribe<characterTakeDamageMessage>(_playerStatus.CharacterReciveDamage);
-            Unsubscribe<characterTakeDamageMessage>(TakeDamage);
 
-            Unsubscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
-            Unsubscribe<AlienTakeDamageMessage>(AlienTakeDamage);
-            Unsubscribe<UfoTakeDamageMessage>(UfoTakeDamage);
+            //Unsubscribe<AlienTakeDamageMessage>(AlienTakeDamage);
+            Unsubscribe<AlienTakeDamageMessage>(_powerUpContainer.OnAlienShipDie);
+            Unsubscribe<AlienTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            Unsubscribe<UfoTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
+            //Unsubscribe<UfoTakeDamageMessage>(UfoTakeDamage);
+            
             Unsubscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
 
-            Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
+            //Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
             Unsubscribe<AddNewScoreMessege>(_scoreBoard.AddNewScore);
 
         }
 
-        void TakeDamage(characterTakeDamageMessage TD)
-        {
-            Debug.Log("HIT");
-        }
+
         void AlienTakeDamage(AlienTakeDamageMessage ATD)
         {
-            Debug.Log("Hancur");
+
         }
         void UfoTakeDamage(UfoTakeDamageMessage UTD)
         {

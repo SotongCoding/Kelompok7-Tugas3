@@ -11,13 +11,13 @@ namespace SpaceInvader.Character
     {
         public override void SetView(EnemySatu_View view)
         {
-            view.TakeDamage += TakeDamage;
+            // view.TakeDamage += TakeDamage;
             view.ShootBullet += ShootBullet;
             base.SetView(view);
         }
         private void TakeDamage()
         {
-            Publish<EnemyTakeDamageMessage>(new EnemyTakeDamageMessage());
+            // Publish<EnemyTakeDamageMessage>(new EnemyTakeDamageMessage());
         }
         private void ShootBullet()
         {

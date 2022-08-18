@@ -9,9 +9,9 @@ namespace SpaceInvader.PowerUps
     public class PowerUps_ControllerContainer : BaseController<PowerUps_ControllerContainer>
     {
         #region Messege Reciver
-        public void SpawnPowerUp(Messege.SpawnPowerUpMessege messege)
+        public void OnAlienShipDie(Messege.AlienTakeDamageMessage message)
         {
-            SpawnPowerUp(messege.powerUpObject, messege.spawnPos);
+            SpawnPowerUp(message.destroyPosition);
         }
         #endregion
 
@@ -19,15 +19,17 @@ namespace SpaceInvader.PowerUps
             new PU_PiercingShoot(),
         };
 
-        private void SpawnPowerUp(PowerUps_View createdPowerUp_view, Vector2 spawnLocation)
+        private void SpawnPowerUp(Vector2 spawnLocation)
         {
+            bool spawn = Random.Range(0, 101) <= 10;
+            if (!spawn) return;
+
             PowerUps_Model model = avaiablePowerUp[Random.Range(0, avaiablePowerUp.Length)];
-            PowerUps_View instanceObject = GameObject.Instantiate(createdPowerUp_view);
+            PowerUps_View instanceObject = GameObject.Instantiate(Resources.Load<PowerUps_View>("prefabs/powerUpBase"));
+            instanceObject.transform.position = spawnLocation;
 
             PowerUps_Controller instance = new PowerUps_Controller();
-
             InjectDependencies(instance);
-
             instance.Init(model, instanceObject);
         }
 

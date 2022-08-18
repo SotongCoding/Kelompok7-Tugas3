@@ -45,17 +45,6 @@ namespace SpaceInvader.Messege
     #endregion
 
     #region PowerUp Messege
-    public struct SpawnPowerUpMessege
-    {
-        public PowerUps.PowerUps_View powerUpObject;
-        public Vector2 spawnPos;
-
-        public SpawnPowerUpMessege(PowerUps_View powerUpObject, Vector2 spawnPos)
-        {
-            this.powerUpObject = powerUpObject;
-            this.spawnPos = spawnPos;
-        }
-    }
     public struct RecivePowerUpMessege
     {
         public int powerUpId;
@@ -70,7 +59,8 @@ namespace SpaceInvader.Messege
     #endregion
 
     #region ScoreBoard Messege
-    public struct AddNewScoreMessege{
+    public struct AddNewScoreMessege
+    {
         public string playerName;
         public int currentPlayerScore;
 
@@ -83,7 +73,8 @@ namespace SpaceInvader.Messege
     #endregion
 
     #region  Audio Messege
-    public struct PlayAuidoMessege{
+    public struct PlayAuidoMessege
+    {
         public string audioName;
 
         public PlayAuidoMessege(string audioName)
@@ -95,22 +86,20 @@ namespace SpaceInvader.Messege
     #region Character
     public struct characterTakeDamageMessage
     {
-        
-    }
-    #endregion
-    #region Enemy
-    public struct EnemyTakeDamageMessage
-    {
 
     }
     #endregion
+
     #region AlienShip
     public struct AlienTakeDamageMessage
     {
+        public Vector2 destroyPosition;
 
+        public AlienTakeDamageMessage(Vector2 destroyPosition)
+        {
+            this.destroyPosition = destroyPosition;
+        }
     }
-    #endregion
-    #region AlienShip
     public struct UfoTakeDamageMessage
     {
 
