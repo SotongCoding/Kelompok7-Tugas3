@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using Agate.MVC.Base;
+using Agate.MVC.Core;
 
 namespace SpaceInvader.ScoreBoard
 {
@@ -19,6 +20,7 @@ namespace SpaceInvader.ScoreBoard
         [SerializeField] Transform scoreObjPlace;
 
         public Button testingAddScore;
+        public PowerUps.PowerUps_View powerUpPrefab;
 
         public void ShowScoreBoard()
         {

@@ -13,7 +13,7 @@ namespace SpaceInvader.PowerUps
 
         public override void OnPick()
         {
-            Debug.Log("Change Bullet to Piercing Bullet");  
+            
         }
     }
 }
