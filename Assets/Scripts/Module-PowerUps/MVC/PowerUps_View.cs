@@ -13,7 +13,7 @@ namespace SpaceInvader.PowerUps
         public System.Action Hancurkan;
         protected override void InitRenderModel(IPowerUps_Model model)
         {
-           MovePowerUp();
+
         }
 
         protected override void UpdateRenderModel(IPowerUps_Model model)
@@ -21,7 +21,7 @@ namespace SpaceInvader.PowerUps
 
         }
 
-        private void MovePowerUp()
+        public void MovePowerUp()
         {
             StartCoroutine(TranslateObject());
 

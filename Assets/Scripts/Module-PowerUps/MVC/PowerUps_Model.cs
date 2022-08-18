@@ -17,7 +17,7 @@ namespace SpaceInvader.PowerUps
 
         public virtual void OnPick()
         {
-            //SetDataAsDirty();
+            Debug.Log("Standart Pick");
         }
 
         public void HancurkanLogic(){

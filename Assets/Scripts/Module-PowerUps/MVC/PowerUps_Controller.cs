@@ -15,17 +15,15 @@ namespace SpaceInvader.PowerUps
             _model = model;
             SetView(view);
 
-            view.onPick+= model.OnPick;
-            view.onPick+= PubMes_PickPowerUp;
+            view.onPick += model.OnPick;
+            view.onPick += PubMes_PickPowerUp;
+
+            view.MovePowerUp();
+
         }
 
-        public override void SetView(PowerUps_View view)
+        private void PubMes_PickPowerUp()
         {
-            base.SetView(view);
-            view.Hancurkan+= _model.HancurkanLogic;
-        }
-
-        private void PubMes_PickPowerUp(){
             Publish<Messege.RecivePowerUpMessege>(new Messege.RecivePowerUpMessege(
                 _model.powerUpId,
                 _model.duration

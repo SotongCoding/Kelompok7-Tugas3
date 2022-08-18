@@ -9,6 +9,5 @@ namespace SpaceInvader.MainMenu
     public class MainMenu_View : BaseSceneView
     {
         public ScoreBoard.ScoreBoard_View scoreBoardView;
-        public Audio.Audio_View audioView;
     }
 }

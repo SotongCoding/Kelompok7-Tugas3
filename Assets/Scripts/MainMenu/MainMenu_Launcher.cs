@@ -17,22 +17,26 @@ namespace SpaceInvader.MainMenu
 
         protected override IConnector[] GetSceneConnectors()
         {
-            //This is Testing
+           // This is Testing
             return new IConnector[]
              {
-                new Gameplay.GameplayConnector()
+               new TestingConnector()
              };
+            //return null;
         }
 
         protected override IController[] GetSceneDependencies()
         {
-            return null;
+            return new IController[]
+            {
+                new PowerUps.PowerUps_ControllerContainer()
+            };
         }
 
         protected override IEnumerator InitSceneObject()
         {
             _scoreBoard.SetView(_view.scoreBoardView);
-            _audio.SetView(_view.audioView);
+            _audio.SetView(FindObjectOfType<Audio.Audio_View>());
             yield return null;
         }
 
