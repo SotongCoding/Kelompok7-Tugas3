@@ -14,6 +14,7 @@ namespace SpaceInvader.Character
        
         public System.Action TakeDamage;
         public System.Action ShootBullet;
+        public System.Action<Bullet_View, int> createBullet; 
         int i = 0;
         protected override void InitRenderModel(IBaseObject_Model model)
         {
@@ -53,13 +54,8 @@ namespace SpaceInvader.Character
         {
             if (Input.GetMouseButtonDown(0))
             {
-                var view = Instantiate(bulletPrefabs[i], transform.position, Quaternion.identity);
                 ShootBullet?.Invoke();
-
-                Bullet_Controller control = new Bullet_Controller();
-                Bullet_Model models = i == 0 ? new BulletNormal_Model() : new BulletPiercing_Model();
-                DependencyInjection.Instance.InjectDependencies(control);
-                control.init(view, models);
+                createBullet?.Invoke(bulletPrefabs[i], i);
 
             }
         }

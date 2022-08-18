@@ -11,7 +11,7 @@ namespace SpaceInvader.BulletSetting
 
         public float speed => 5f;
 
-        public virtual int hp { private set; get; }
+        public virtual int hp { set; get; }
 
         public void reduceHP()
         {

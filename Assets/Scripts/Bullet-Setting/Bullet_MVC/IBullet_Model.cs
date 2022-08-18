@@ -10,7 +10,7 @@ namespace SpaceInvader.BulletSetting
     public interface IBullet_Model : IBaseModel
     {
         float speed { get; }
-        int hp { get; }
+        int hp { set;  get; }
         void reduceHP();
     }
 }

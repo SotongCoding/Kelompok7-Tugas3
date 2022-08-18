@@ -5,6 +5,6 @@ using SpaceInvader.BulletSetting;
 
 public class BulletNormal_Model : Bullet_Model
 {
-    public override int hp => 1;
+    public override int hp { set; get; } = 1;
 
 }
