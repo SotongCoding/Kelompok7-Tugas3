@@ -796,7 +796,8 @@ MonoBehaviour:
   baseObjectView: {fileID: 1520237169}
   enemySatuView: {fileID: 1444534433}
   alienShipView: {fileID: 201704188556820606, guid: 1bb80a5a149c71e4ab69ad36927bf5bd, type: 3}
-  ufoView: {fileID: 0}
+  ufoView: {fileID: 3930585175781565191, guid: 7c5f662d2ae15984c96440450f94f86f, type: 3}
+  activateView: {fileID: 1444534432}
 --- !u!4 &1356000713
 Transform:
   m_ObjectHideFlags: 0

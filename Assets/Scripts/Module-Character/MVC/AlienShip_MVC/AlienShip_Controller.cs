@@ -9,10 +9,10 @@ namespace SpaceInvader.Character
 {
     public class AlienShip_Controller : ObjectController<AlienShip_Controller, AlienShip_View>
     {
-        public override void SetView(AlienShip_View view)
+        
+        public void init()
         {
-            view.damaged += TakeDamage;
-            base.SetView(view);
+            _view.damaged += TakeDamage;
         }
         private void TakeDamage()
         {

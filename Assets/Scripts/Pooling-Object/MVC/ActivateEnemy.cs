@@ -2,44 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SpaceInvader.Character;
+using Agate.MVC.Base;
+using Agate.MVC.Core;
+using SpaceInvader.Messege;
 
 namespace SpaceInvader.Pooling
 {
-    public class ActivateEnemy : MonoBehaviour
+    public class ActivateEnemy : BaseView
     {
         [SerializeField] private AlienShip_View enemyPrefabs;
         private int rows = 3;
         private int columns = 6;
         public int amountKilled { get; private set; }
         [SerializeField] private int total => this.rows * this.columns;
-        [SerializeField] private float percentKilled  => (float)this.amountKilled / (float)this.total;
+        [SerializeField] private float percentKilled => (float)this.amountKilled / (float)this.total;
         [SerializeField] GameObject parent;
 
         public List<GameObject> AS = new List<GameObject>();
+        public System.Action<AlienShipSpawnMessage> SpawnEvent;
 
         private void Awake()
         {
-            Spawn();
+            
 
         }
         private void RespawnEnemy()
         {
-
-          Transform[] allChildren = GetComponentsInChildren<Transform>();
-          foreach (Transform child in allChildren)
-          {
-              child.gameObject.SetActive(true);
-          }
+           if (amountKilled == 18)
+           {
+                parent.SetActive(false);
+                if(parent.activeInHierarchy == false)
+                {
+                    gameObject.transform.position = new Vector3(-3, 0, 0);
+                    parent.SetActive(true);
+                    amountKilled = 0;
+                    foreach(var respawn in AS)
+                    {
+                        respawn.SetActive(true);
+                    }
+                }
+                
+            }
         }
-    private void alienKilled()
+    public void alienKilled()
         {
             this.amountKilled++;
         }
         private void Update()
         {
+            RespawnEnemy();
             
         }
-        private void Spawn()
+        public void Spawn()
         {
             for (int row = 0; row < this.rows; row++)
             {
@@ -51,12 +65,14 @@ namespace SpaceInvader.Pooling
 
                 for (int column = 0; column < this.columns; column++)
                 {
-                    AlienShip_View enemyShip = Instantiate(enemyPrefabs, transform);
-                    enemyShip.killed += alienKilled;
-                    Vector3 position = rowPos;
-                    position.x += column * 2.0f;
-                    enemyShip.transform.localPosition = position;
-                    AS.Add(enemyShip.gameObject);
+                    SpawnEvent?.Invoke(new AlienShipSpawnMessage(
+                        rowPos,
+                        column,
+                        enemyPrefabs,
+                        alienKilled,
+                        this.transform,
+                        AS
+                        ));
                 }
             }
         }

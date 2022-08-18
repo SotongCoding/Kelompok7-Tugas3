@@ -26,11 +26,11 @@ namespace SpaceInvader.Character
         {
             if (changeDirection)
             {
-                transform.Translate(Vector2.right * 10 * 0.5f * Time.deltaTime);
+                transform.Translate(Vector2.right * 8 * 0.5f * Time.deltaTime);
             }
             else
             {
-                transform.Translate(Vector2.left * 10 * 0.5f * Time.deltaTime);
+                transform.Translate(Vector2.left * 8 * 0.5f * Time.deltaTime);
             }
             if (T.position.x <= -5)
             {

@@ -17,16 +17,17 @@ namespace SpaceInvader.Gameplay
         Gameplay.PlayerStatus.PlayerStatus_Controller _playerStatus;
         private Character.AlienShip_Controller _alienShip;
         private Character.UFO_Controller _ufo;
+        private Pooling.ActivateEnemy_Controller _activateEnemy;
 
         protected override void Connect()
         {
             Subscribe<characterTakeDamageMessage>(_playerStatus.CharacterReciveDamage);
             Subscribe<characterTakeDamageMessage>(TakeDamage);
 
-            Subscribe<EnemyTakeDamageMessage>(EnemyTakeDamage);
             Subscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
             Subscribe<AlienTakeDamageMessage>(AlienTakeDamage);
             Subscribe<UfoTakeDamageMessage>(UfoTakeDamage);
+            Subscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
 
             Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
@@ -39,10 +40,10 @@ namespace SpaceInvader.Gameplay
             Unsubscribe<characterTakeDamageMessage>(_playerStatus.CharacterReciveDamage);
             Unsubscribe<characterTakeDamageMessage>(TakeDamage);
 
-            Unsubscribe<EnemyTakeDamageMessage>(EnemyTakeDamage);
             Unsubscribe<EnemyTakeDamageMessage>(_playerStatus.EnemyTakeDamage);
             Unsubscribe<AlienTakeDamageMessage>(AlienTakeDamage);
             Unsubscribe<UfoTakeDamageMessage>(UfoTakeDamage);
+            Unsubscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
 
             Subscribe<SpawnPowerUpMessege>(_powerUpContainer.SpawnPowerUp);
 
@@ -53,10 +54,6 @@ namespace SpaceInvader.Gameplay
         void TakeDamage(characterTakeDamageMessage TD)
         {
             Debug.Log("HIT");
-        }
-        void EnemyTakeDamage(EnemyTakeDamageMessage ETD)
-        {
-            Debug.Log("Destroy");
         }
         void AlienTakeDamage(AlienTakeDamageMessage ATD)
         {
