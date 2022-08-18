@@ -10,7 +10,6 @@ namespace SpaceInvader.Character
     public class Character_View : ObjectView<ICharacter_Model>, IMoveable, IAttackable
     {
         [SerializeField] Bullet_View[] bulletPrefabs;
-        Bullet_View temp;
        
         public System.Action TakeDamage;
         public System.Action ShootBullet;
