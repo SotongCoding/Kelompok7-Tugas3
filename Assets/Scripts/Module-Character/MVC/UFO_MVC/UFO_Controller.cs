@@ -13,6 +13,7 @@ namespace SpaceInvader.Character
         private void TakeDamage()
         {
             Publish<UfoTakeDamageMessage>(new UfoTakeDamageMessage());
+            Publish<PlayAuidoMessege>(new PlayAuidoMessege("sfx_enemyDestroy"));
         }
 
         internal void Init(UFO_View ufo)

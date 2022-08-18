@@ -20,7 +20,7 @@ namespace SpaceInvader.Gameplay
         public override string SceneName => "Gameplay";
 
         private PlayerStatus_Controller _playerStatusControl;
-        private BaseObject_Controller _baseObjectControl;
+        private Character_Controller _baseObjectControl;
         private EnemySatu_Controller _enemySatuControl;
         private AlienShip_Controller _alienShipControl;
         private UFO_Controller _ufoControl;
@@ -44,7 +44,7 @@ namespace SpaceInvader.Gameplay
                 new PlayerStatus_Controller(),
                 new PowerUps_Controller(),
 
-                new BaseObject_Controller(),
+                new Character_Controller(),
                 new EnemySatu_Controller(),
                 new AlienShip_Controller(),
                 new UFO_Controller(),

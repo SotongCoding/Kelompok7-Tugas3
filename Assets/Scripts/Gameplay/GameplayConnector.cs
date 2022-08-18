@@ -18,7 +18,7 @@ namespace SpaceInvader.Gameplay
         private Character.AlienShip_Controller _alienShip;
         private Character.UFO_Controller _ufo;
         private Pooling.ActivateEnemy_Controller _activateEnemy;
-        private Character.BaseObject_Controller _character;
+        private Character.Character_Controller _character;
 
         protected override void Connect()
         {

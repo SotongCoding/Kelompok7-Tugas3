@@ -4,6 +4,7 @@ using UnityEngine;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
 using SpaceInvader.Messege;
+using SpaceInvader.Pooling;
 
 namespace SpaceInvader.Character
 {
@@ -14,6 +15,11 @@ namespace SpaceInvader.Character
             // view.TakeDamage += TakeDamage;
             view.ShootBullet += ShootBullet;
             base.SetView(view);
+            GenerateAlien();
+        }
+        private void GenerateAlien()
+        {
+            _model.Generate(_view.GetComponent<ActivateEnemy>().AS);
         }
         private void TakeDamage()
         {
