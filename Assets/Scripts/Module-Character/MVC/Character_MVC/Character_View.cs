@@ -32,7 +32,14 @@ namespace SpaceInvader.Character
 
         public void Move(Transform T)
         {
-            _model.CharacterMove(T);
+            if (Input.GetKey(KeyCode.RightArrow) && T.position.x <= 8)
+            {
+                _model.CharacterMove(T, true);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow) && T.position.x >= -8)
+            {
+                _model.CharacterMove(T, false);
+            }
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {

@@ -12,6 +12,7 @@ namespace SpaceInvader.Character
         [SerializeField] GameObject bulletPrefabs;
         public System.Action TakeDamage;
         public System.Action ShootBullet;
+        public bool CanMove = false;
         public void Attack()
         {
             StartCoroutine(SpawnBulletEnemy());
@@ -50,12 +51,11 @@ namespace SpaceInvader.Character
         }
         private void Update()
         {
-            Move(this.transform);
+            if (CanMove == true)
+            {
+                Move(this.transform);
+            }
             
-        }
-        private void OnEnable()
-        {
-            Attack();
         }
     }
 }
