@@ -17,6 +17,7 @@ namespace SpaceInvader.Pooling
         [SerializeField] private int total => this.rows * this.columns;
         [SerializeField] private float percentKilled => (float)this.amountKilled / (float)this.total;
         [SerializeField] GameObject parent;
+        [SerializeField] Shield_View[] shield;
 
         public List<GameObject> AS = new List<GameObject>();
         public System.Action<AlienShipSpawnMessage> SpawnEvent;
@@ -39,6 +40,11 @@ namespace SpaceInvader.Pooling
                     foreach(var respawn in AS)
                     {
                         respawn.SetActive(true);
+                    }
+                    foreach(Shield_View child in shield)
+                    {
+                        child.gameObject.SetActive(true);
+                        child.RegenerateShield();
                     }
                 }
                 
