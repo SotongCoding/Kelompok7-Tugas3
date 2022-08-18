@@ -40,22 +40,26 @@ namespace SpaceInvader.Gameplay
             {
                 new PlayerStatus_Controller(),
                 new PowerUps_Controller(),
+                new PowerUps_ControllerContainer(),
 
                 new BaseObject_Controller(),
                 new EnemySatu_Controller(),
+
                 new AlienShip_Controller(),
                 new UFO_Controller(),
+                
                 new ActivateEnemy_Controller()
             };
         }
 
         protected override IEnumerator InitSceneObject()
         {
-            _playerStatusControl.SetView(_view.statusView);
             _baseObjectControl.SetView(_view.baseObjectView);
             _enemySatuControl.SetView(_view.enemySatuView);
             _alienShipControl.SetView(_view.alienShipView);
             _ufoControl.SetView(_view.ufoView);
+
+            _playerStatusControl.SetView(_view.statusView);
             _activateControl.SetView(_view.activateView);
             
 
@@ -65,7 +69,7 @@ namespace SpaceInvader.Gameplay
         protected override IEnumerator LaunchScene()
         {
             _activateControl.init();
-            _alienShipControl.init();
+            //_alienShipControl.init();
             yield return null;
         }
     }

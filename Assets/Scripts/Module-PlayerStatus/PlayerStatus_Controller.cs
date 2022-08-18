@@ -37,10 +37,13 @@ namespace SpaceInvader.Gameplay.PlayerStatus
         {
             ReduceHealth();
         }
-        public void EnemyTakeDamage(Messege.EnemyTakeDamageMessage message)
+        public void EnemyTakeDamage(Messege.AlienTakeDamageMessage message)
         {
-            Debug.Log("AddScore");
             ScoreKilledEnemy(10);
+        }
+        public void EnemyTakeDamage(Messege.UfoTakeDamageMessage messege)
+        {
+            ScoreKilledEnemy(50);
         }
     }
 }
