@@ -9,9 +9,9 @@ using SpaceInvader.BulletSetting;
 
 namespace SpaceInvader.Character
 {
-    public class BaseObject_Controller : ObjectController<BaseObject_Controller, BaseObject_Model, IBaseObject_Model, BaseObject_View>
+    public class Character_Controller : ObjectController<Character_Controller, Character_Model, ICharacter_Model, Character_View>
     {
-        public override void SetView(BaseObject_View view)
+        public override void SetView(Character_View view)
         {
             view.TakeDamage += TakeDamage;
             view.ShootBullet += ShootBullet;

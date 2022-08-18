@@ -7,21 +7,20 @@ using SpaceInvader.BulletSetting;
 
 namespace SpaceInvader.Character
 {
-    public class BaseObject_View : ObjectView<IBaseObject_Model>, IMoveable, IAttackable
+    public class Character_View : ObjectView<ICharacter_Model>, IMoveable, IAttackable
     {
         [SerializeField] Bullet_View[] bulletPrefabs;
-        Bullet_View temp;
        
         public System.Action TakeDamage;
         public System.Action ShootBullet;
         public System.Action<Bullet_View, int> createBullet; 
         int i = 0;
-        protected override void InitRenderModel(IBaseObject_Model model)
+        protected override void InitRenderModel(ICharacter_Model model)
         {
            
         }
 
-        protected override void UpdateRenderModel(IBaseObject_Model model)
+        protected override void UpdateRenderModel(ICharacter_Model model)
         {
             
         }
@@ -33,14 +32,7 @@ namespace SpaceInvader.Character
 
         public void Move(Transform T)
         {
-            if (Input.GetKey(KeyCode.RightArrow) && T.position.x <= 8)
-            {
-                transform.Translate(Vector2.right * 10 * 1 * Time.deltaTime);
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow) && T.position.x >= -8)
-            {
-                transform.Translate(Vector2.left * 10 * 1 * Time.deltaTime);
-            }
+            _model.CharacterMove(T);
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {

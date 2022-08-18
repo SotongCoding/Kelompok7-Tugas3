@@ -21,7 +21,6 @@ namespace SpaceInvader.BulletSetting
         private void OnHitEnemy()
         {
             _model.reduceHP();
-            Debug.Log(_model.hp);
             if (_model.hp <= 0)
             {
                 MonoBehaviour.Destroy(_view.gameObject);

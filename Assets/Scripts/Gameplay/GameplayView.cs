@@ -11,7 +11,7 @@ namespace SpaceInvader.Gameplay
     public class GameplayView : BaseSceneView
     {
         public Gameplay.PlayerStatus.PlayerStatus_View statusView;
-        public BaseObject_View baseObjectView;
+        public Character_View baseObjectView;
         public EnemySatu_View enemySatuView;
         public AlienShip_View alienShipView;
         public UFO_View ufoView;
