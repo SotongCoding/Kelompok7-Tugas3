@@ -18,14 +18,6 @@ namespace SpaceInvader.ScoreBoard
 
         }
 
-        public override void SetView(ScoreBoard_View view)
-        {
-            base.SetView(view);
-            view.SetButtonCallback();
-
-            //view.testingAddScore.onClick.AddListener(ButtonEvent);
-        }
-
         void ButtonEvent()
         {
             //Publish<Messege.SpawnPowerUpMessege>(new Messege.SpawnPowerUpMessege(_view.powerUpPrefab,Vector2.zero));

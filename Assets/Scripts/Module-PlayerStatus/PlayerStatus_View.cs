@@ -26,7 +26,6 @@ namespace SpaceInvader.Gameplay.PlayerStatus
         protected override void UpdateRenderModel(IPlayerStatus_Model model)
         {
             playerScore.text = "Score : " + model.currentScore.ToString();
-            Debug.Log(model.playerHealth);
             for (int i = 0; i < 3 - model.playerHealth; i++)
             {
                 playerHealth[i].gameObject.SetActive(false);

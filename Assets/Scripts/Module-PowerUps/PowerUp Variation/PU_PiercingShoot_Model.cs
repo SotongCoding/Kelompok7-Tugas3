@@ -10,10 +10,5 @@ namespace SpaceInvader.PowerUps
     {
         public override int powerUpId => 1;
         public override float duration => 5;
-
-        public override void OnPick()
-        {
-            
-        }
     }
 }
