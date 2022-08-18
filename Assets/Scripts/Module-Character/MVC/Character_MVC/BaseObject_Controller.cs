@@ -18,6 +18,7 @@ namespace SpaceInvader.Character
         private void TakeDamage()
         {
             Publish<characterTakeDamageMessage>(new characterTakeDamageMessage());
+            Publish<PlayAuidoMessege>(new PlayAuidoMessege("sfx_charDestroy"));
         }
         private void ShootBullet()
         {

@@ -16,5 +16,6 @@ namespace SpaceInvader.Gameplay
         public AlienShip_View alienShipView;
         public UFO_View ufoView;
         public Pooling.ActivateEnemy activateView;
+        public Shield_View shieldView;
     }
 }
