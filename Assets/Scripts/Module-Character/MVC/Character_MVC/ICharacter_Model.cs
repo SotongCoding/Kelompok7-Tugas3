@@ -8,7 +8,7 @@ namespace SpaceInvader.Character
 {
     public interface ICharacter_Model : IBaseModel, IDamageable
     {
-        void CharacterMove(Transform T);
+        void CharacterMove(Transform T, bool B);
     }
 }
 

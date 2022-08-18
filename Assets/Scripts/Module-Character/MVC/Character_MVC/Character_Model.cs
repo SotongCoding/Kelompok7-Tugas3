@@ -10,13 +10,13 @@ namespace SpaceInvader.Character
     {
         protected int speed = 10;
 
-        public void CharacterMove(Transform T)
+        public void CharacterMove(Transform T, bool CanMove)
         {
-            if (Input.GetKey(KeyCode.RightArrow) && T.position.x <= 8)
+            if (CanMove == true)
             {
                 T.Translate(Vector2.right * speed * 1 * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.LeftArrow) && T.position.x >= -8)
+            else if (CanMove == false)
             {
                 T.Translate(Vector2.left * speed * 1 * Time.deltaTime);
             }

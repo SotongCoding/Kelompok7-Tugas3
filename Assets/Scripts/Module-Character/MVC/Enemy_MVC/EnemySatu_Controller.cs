@@ -16,6 +16,8 @@ namespace SpaceInvader.Character
             view.ShootBullet += ShootBullet;
             base.SetView(view);
             GenerateAlien();
+            view.Attack();
+            view.CanMove = true;
         }
         private void GenerateAlien()
         {
