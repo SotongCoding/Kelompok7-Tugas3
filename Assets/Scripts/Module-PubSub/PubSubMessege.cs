@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using SpaceInvader.PowerUps;
 using UnityEngine;
+using SpaceInvader.Pooling;
+using SpaceInvader.Character;
+using System;
 
 namespace SpaceInvader.Messege
 {
@@ -111,6 +114,27 @@ namespace SpaceInvader.Messege
     public struct UfoTakeDamageMessage
     {
 
+    }
+    #endregion
+    #region AlienShipSpawnMessage
+    public struct AlienShipSpawnMessage
+    {
+        public Vector3 rowPos;
+        public int column;
+        public AlienShip_View enemyPrefabs;
+        public System.Action allienKilled;
+        public Transform transform;
+        public List<GameObject> AS;
+
+        public AlienShipSpawnMessage(Vector3 rowPos, int column, AlienShip_View enemyPrefabs, Action allienKilled, Transform transform, List<GameObject> aS)
+        {
+            this.rowPos = rowPos;
+            this.column = column;
+            this.enemyPrefabs = enemyPrefabs;
+            this.allienKilled = allienKilled;
+            this.transform = transform;
+            AS = aS;
+        }
     }
     #endregion
 }
