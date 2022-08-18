@@ -18,11 +18,11 @@ namespace SpaceInvader.MainMenu
         protected override IConnector[] GetSceneConnectors()
         {
            // This is Testing
-            return new IConnector[]
-             {
-               new TestingConnector()
-             };
-            //return null;
+            // return new IConnector[]
+            //  {
+            //    new TestingConnector()
+            //  };
+            return null;
         }
 
         protected override IController[] GetSceneDependencies()

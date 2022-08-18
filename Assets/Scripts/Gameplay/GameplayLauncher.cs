@@ -26,7 +26,7 @@ namespace SpaceInvader.Gameplay
         private UFO_Controller _ufoControl;
         private ActivateEnemy_Controller _activateControl;
         private Audio_Controller _audioControl;
-        private Shield_Controller _shieldControl;
+       // private Shield_Controller _shieldControl;
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -50,7 +50,7 @@ namespace SpaceInvader.Gameplay
                 new UFO_Controller(),
                 new ActivateEnemy_Controller(),
                 new PowerUps_ControllerContainer(),
-                new Shield_Controller()
+               // new Shield_Controller()
             };
         }
 
@@ -63,7 +63,7 @@ namespace SpaceInvader.Gameplay
             _ufoControl.SetView(_view.ufoView);
             _activateControl.SetView(_view.activateView);
             _audioControl.SetView(FindObjectOfType<Audio_View>());
-            _shieldControl.SetView(_view.shieldView);
+           // _shieldControl.SetView(_view.shieldView);
 
             yield return null;
         }
@@ -71,7 +71,7 @@ namespace SpaceInvader.Gameplay
         protected override IEnumerator LaunchScene()
         {
             _activateControl.init();
-            _alienShipControl.init();
+            //_alienShipControl.init();
             //_shieldControl.init();
             yield return null;
         }

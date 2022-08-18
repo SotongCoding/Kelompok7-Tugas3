@@ -8,12 +8,12 @@ namespace SpaceInvader.ScoreBoard
 {
     public class ScoreBoard_Controller : ObjectController<ScoreBoard_Controller, ScoreBoard_Model, IScoreBoard_Model, ScoreBoard_View>
     {
-        public void AddNewScore(Messege.AddNewScoreMessege messege)
+        public void AddNewScore(Messege.CharacterDieMessege messege)
         {
             _model.StoreScore(
                 new SocoreData(
                     messege.playerName,
-                    messege.currentPlayerScore
+                    messege.lastScore
                 ));
 
         }
@@ -23,12 +23,12 @@ namespace SpaceInvader.ScoreBoard
             base.SetView(view);
             view.SetButtonCallback();
 
-            view.testingAddScore.onClick.AddListener(ButtonEvent);
+            //view.testingAddScore.onClick.AddListener(ButtonEvent);
         }
 
         void ButtonEvent()
         {
-            Publish<Messege.SpawnPowerUpMessege>(new Messege.SpawnPowerUpMessege(_view.powerUpPrefab,Vector2.zero));
+            //Publish<Messege.SpawnPowerUpMessege>(new Messege.SpawnPowerUpMessege(_view.powerUpPrefab,Vector2.zero));
         }
         public override IEnumerator Initialize()
         {
