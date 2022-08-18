@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
+using SpaceInvader.BulletSetting;
 
 namespace SpaceInvader.Character
 {
     public class BaseObject_View : ObjectView<IBaseObject_Model>, IMoveable, IAttackable
     {
-        [SerializeField] GameObject bulletPrefabs;
+        [SerializeField] Bullet_View[] bulletPrefabs;
+        Bullet_View temp;
+       
         public System.Action TakeDamage;
         public System.Action ShootBullet;
+        public System.Action<Bullet_View, int> createBullet; 
+        int i = 0;
         protected override void InitRenderModel(IBaseObject_Model model)
         {
            
@@ -49,9 +54,23 @@ namespace SpaceInvader.Character
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
                 ShootBullet?.Invoke();
-                
+                createBullet?.Invoke(bulletPrefabs[i], i);
+
+            }
+        }
+        public void ChangeBullet(int i)
+        {
+            this.i = i;
+        }
+        public void GetDuration(float duration)
+        {
+            StartCoroutine(TimeCounting());
+
+            IEnumerator TimeCounting()
+            {
+                yield return new WaitForSeconds(duration);
+                ChangeBullet(0);
             }
         }
     }

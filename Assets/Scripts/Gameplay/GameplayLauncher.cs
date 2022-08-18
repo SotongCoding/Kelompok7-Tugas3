@@ -49,7 +49,8 @@ namespace SpaceInvader.Gameplay
                 new AlienShip_Controller(),
                 new UFO_Controller(),
                 new ActivateEnemy_Controller(),
-                new PowerUps_ControllerContainer(),
+                new PowerUps_ControllerContainer()
+                
                // new Shield_Controller()
             };
         }
