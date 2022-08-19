@@ -10,19 +10,25 @@ namespace SpaceInvader.Character
     public class Character_View : ObjectView<ICharacter_Model>, IMoveable, IAttackable
     {
         [SerializeField] Bullet_View[] bulletPrefabs;
-       
+
         public System.Action TakeDamage;
         public System.Action ShootBullet;
-        public System.Action<Bullet_View, int> createBullet; 
+        public System.Action<Bullet_View, int> createBullet;
         int i = 0;
+        bool GameOver = false;
+
+        private void Awake()
+        {
+            GameOver = false;
+        }
         protected override void InitRenderModel(ICharacter_Model model)
         {
-           
+
         }
 
         protected override void UpdateRenderModel(ICharacter_Model model)
         {
-            
+
         }
         protected void Update()
         {
@@ -43,7 +49,7 @@ namespace SpaceInvader.Character
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag ("EnemyBullet"))
+            if (collision.CompareTag("EnemyBullet"))
             {
                 TakeDamage?.Invoke();
             }
@@ -51,7 +57,7 @@ namespace SpaceInvader.Character
 
         public void Attack()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !GameOver)
             {
                 ShootBullet?.Invoke();
                 createBullet?.Invoke(bulletPrefabs[i], i);
@@ -71,6 +77,10 @@ namespace SpaceInvader.Character
                 yield return new WaitForSeconds(duration);
                 ChangeBullet(0);
             }
+        }
+        public void SetGameOver(bool gemeOver)
+        {
+            GameOver = gemeOver;
         }
     }
 }

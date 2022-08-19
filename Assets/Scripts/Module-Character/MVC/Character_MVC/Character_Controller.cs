@@ -42,6 +42,9 @@ namespace SpaceInvader.Character
             InjectDependencies(control);
             control.init(view, models);
         }
+        public void StopShoot (CharacterDieMessege messege){
+            _view.SetGameOver(true);
+        }
     }
 }
 

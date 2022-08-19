@@ -32,6 +32,8 @@ namespace SpaceInvader.Gameplay
             Subscribe<CharacterDieMessege>(_playerStatus.ShowGameOver);
 
             Subscribe<RecivePowerUpMessege>(_character.GetPowerUp);
+            Subscribe<CharacterDieMessege>(_character.StopShoot);
+            
             //Subscribe<UfoTakeDamageMessage>(UfoTakeDamage);
 
             Subscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
@@ -54,6 +56,7 @@ namespace SpaceInvader.Gameplay
             Unsubscribe<CharacterDieMessege>(_playerStatus.ShowGameOver);
 
             Unsubscribe<RecivePowerUpMessege>(_character.GetPowerUp);
+            Unsubscribe<CharacterDieMessege>(_character.StopShoot);
             //Unsubscribe<UfoTakeDamageMessage>(UfoTakeDamage);
 
             Unsubscribe<AlienShipSpawnMessage>(_activateEnemy.Spawn);
