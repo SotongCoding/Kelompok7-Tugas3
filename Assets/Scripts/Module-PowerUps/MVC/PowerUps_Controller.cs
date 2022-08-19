@@ -15,7 +15,6 @@ namespace SpaceInvader.PowerUps
             _model = model;
             SetView(view);
 
-            view.onPick += model.OnPick;
             view.onPick += PubMes_PickPowerUp;
             view.onPick += DestroyPU;
 
@@ -33,7 +32,7 @@ namespace SpaceInvader.PowerUps
             Publish<Messege.RecivePowerUpMessege>(new Messege.RecivePowerUpMessege(
                 _model.powerUpId,
                 _model.duration
-            ));
+            )); 
         }
     }
 }

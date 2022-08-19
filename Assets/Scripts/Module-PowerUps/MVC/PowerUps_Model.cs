@@ -14,14 +14,5 @@ namespace SpaceInvader.PowerUps
         public virtual int powerUpId => 0;
 
         public virtual float duration => 0;
-
-        public virtual void OnPick()
-        {
-            Debug.Log("Standart Pick");
-        }
-
-        public void HancurkanLogic(){
-            
-        }
     }
 }

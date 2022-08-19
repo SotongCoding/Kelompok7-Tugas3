@@ -8,22 +8,14 @@ namespace SpaceInvader.ScoreBoard
 {
     public class ScoreBoard_Controller : ObjectController<ScoreBoard_Controller, ScoreBoard_Model, IScoreBoard_Model, ScoreBoard_View>
     {
-        public void AddNewScore(Messege.CharacterDieMessege messege)
+        public void AddNewScore(Messege.SendScoreBoardScoreMessege messege)
         {
             _model.StoreScore(
                 new SocoreData(
                     messege.playerName,
-                    messege.lastScore
+                    messege.currentScore
                 ));
 
-        }
-
-        public override void SetView(ScoreBoard_View view)
-        {
-            base.SetView(view);
-            view.SetButtonCallback();
-
-            //view.testingAddScore.onClick.AddListener(ButtonEvent);
         }
 
         void ButtonEvent()

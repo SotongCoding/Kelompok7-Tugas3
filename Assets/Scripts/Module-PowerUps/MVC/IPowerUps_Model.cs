@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SpaceInvader.PowerUps
 {
     using Agate.MVC.Base;
-    public interface IPowerUps_Model : IBaseModel, IPickAble
+    public interface IPowerUps_Model : IBaseModel
     {
         int powerUpId { get; }
         float duration { get; }

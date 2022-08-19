@@ -19,18 +19,16 @@ namespace SpaceInvader.ScoreBoard
         [SerializeField] UI_ScoreBoard_ScoreObj scorePrefab;
         [SerializeField] Transform scoreObjPlace;
 
-        public Button testingAddScore;
-        public PowerUps.PowerUps_View powerUpPrefab;
+        // public Button testingAddScore;
+        // public PowerUps.PowerUps_View powerUpPrefab;
 
-        public void ShowScoreBoard()
-        {
-            scoreObjPlace.gameObject.SetActive(!scoreObjPlace.gameObject.activeSelf);
-        }
 
         void RefreshScoreBoard()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
+                if (_model.datas.Count <= i) return;
+
                 UI_ScoreBoard_ScoreObj currentScoreObj;
                 if (scoreObjPlace.childCount <= i)
                     currentScoreObj = Instantiate(scorePrefab, scoreObjPlace);
@@ -47,18 +45,13 @@ namespace SpaceInvader.ScoreBoard
 
         protected override void InitRenderModel(IScoreBoard_Model model)
         {
-            RefreshScoreBoard();
+            if (scoreBoardObj != null)
+                RefreshScoreBoard();
         }
         protected override void UpdateRenderModel(IScoreBoard_Model model)
         {
-            RefreshScoreBoard();
-        }
-        
-        public void SetButtonCallback()
-        {
-            showLeaderBoard.onClick.RemoveAllListeners();
-            showLeaderBoard.onClick.AddListener(ShowScoreBoard);
-            Debug.Log("Set Callback");
+            if (scoreBoardObj != null)
+                RefreshScoreBoard();
         }
 
     }

@@ -16,7 +16,7 @@ namespace SpaceInvader.Gameplay.PlayerStatus
 
         public void InitialStatus()
         {
-            playerHealth = 3;
+            playerHealth = 1;
         }
         public void AddScore(int value)
         {
