@@ -26,14 +26,23 @@
   <IAttackAble>
   void Attack
   ===============
+4. [PlayerBullet] - Lesman
+   -MVC + Interface (Multi Instance)
+
+  void ReduceHP
+  void OnHitEnemy
+  
+6. [Spawner] - Lesman
+   -Controller + View
+   
+  void SpawnAlien
+  void RespawnAlien
   
 2. [PlayerStatus Data] -Sugeng
   -MVC + Interface
   
   void AddScore
-  
   void SaveScore
-  
   void ReduceHealth
 
   
@@ -43,22 +52,11 @@
   <IPickAble>
   void OnPick
   
-4. [PlayerBullet] - Lesman
-   -MVC + Interface (Multi Instance)
-
-  void ReduceHP
-  void OnHitEnemy
   
 5. [Audio] -Sugeng
   -Controller + View
   
   voidOnPlay
-  
-6. [Spawner] - Lesman
-   -Controller + View
-   
-  void SpawnAlien
-  void RespawnAlien
   
 7. [LeaderBoard] - Sugeng
    -MVC + Interface
