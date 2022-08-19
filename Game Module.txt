@@ -55,13 +55,13 @@
   voidOnPlay
   
 6. [Spawner] - Lesman
-   Controller + View
+   -Controller + View
    
   void SpawnAlien
   void RespawnAlien
   
 7. [LeaderBoard] - Sugeng
-   MVC + Interface
+   -MVC + Interface
 
   void RegisterScore(nama, score)
   void LoadScoreBoard
