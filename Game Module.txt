@@ -1,9 +1,18 @@
 1. [Character] - Lesman
   Character (Player)
+  -MVC + Interface
+  
   AlienFormation
+  -MVC + Interface
+  
   AlienNormal
+  -Controller + View (Multi Instance)
+  
   AlienUFO
+  -Controller + View
+  
   Shield
+  -Controller + View (Multi Instance)
   
   <IDamageable>
   void TakeDamage
@@ -19,28 +28,41 @@
   ===============
   
 2. [PlayerStatus Data] -Sugeng
+  -MVC + Interface
+  
   void AddScore
+  
   void SaveScore
   
   void ReduceHealth
 
   
 3. [PowerUp]- Sugeng
+   -MVC + Interface (Multi Instance)
+
   <IPickAble>
   void OnPick
   
 4. [PlayerBullet] - Lesman
+   -MVC + Interface (Multi Instance)
+
   void ReduceHP
   void OnHitEnemy
   
 5. [Audio] -Sugeng
+  -Controller + View
+  
   voidOnPlay
   
 6. [Spawner] - Lesman
+   Controller + View
+   
   void SpawnAlien
   void RespawnAlien
   
 7. [LeaderBoard] - Sugeng
+   MVC + Interface
+
   void RegisterScore(nama, score)
   void LoadScoreBoard
   
